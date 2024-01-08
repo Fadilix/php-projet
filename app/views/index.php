@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Concours</title>
+    <link rel="stylesheet" href="../../public/css/index.css">
 </head>
 <body>
 
@@ -17,8 +18,10 @@ echo "<p>$contestDescription</p>";
 echo "</div>";
 ?>
 
-<a href="inscription.php" class="button">Créer un Compte</a>
-<a href="connexion.php" class="button">Se Connecter</a>
+<div class="links">
+    <a href="inscription.php" class="button">Créer un compte</a>
+    <a href="connexion.php" class="button">Se connecter</a>
+</div>
 
 </body>
 </html>
