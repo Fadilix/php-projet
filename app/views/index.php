@@ -12,6 +12,8 @@
 $contestTitle = "Bienvenue sur notre Plateforme de Concours";
 $contestDescription = "Cette plateforme héberge des concours passionnants où vous pouvez mettre en valeur vos compétences et talents.";
 
+require "../../public/components/navbar.php";
+
 echo "<div class='contest-info'>";
 echo "<h1>$contestTitle</h1>";
 echo "<p>$contestDescription</p>";
