@@ -8,14 +8,17 @@
 }
 
 nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    /* height: 70px; */
+    margin-left: 0;
     background-color: #008cba;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-inline: 100px;
-    position: fixed;
-    top: 0;
-    width: 100vw;
 }
 
 img {

@@ -1,5 +1,5 @@
 <?php
-// connection à la base de donnée;
+// connection à la base de données;
 
 $host = "localhost";
 $dbname = "gestion_candid";
