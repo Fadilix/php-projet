@@ -1,6 +1,7 @@
+-- Verifier si un utilisateur a postulé à un concours
 SELECT * FROM User u, Candidat c
 WHERE u.id = ?
-AND c.user_id = ?
+AND c.id_user = ?
 
 -- User Table
 CREATE TABLE User (

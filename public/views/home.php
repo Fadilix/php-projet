@@ -16,7 +16,7 @@
    }
 
    $userId = $_SESSION["id"];
-// echo $userId;
+   // echo $userId;
    ?>
 
 
@@ -32,9 +32,9 @@
 
 <!-- <button>Consulter candidature</button> -->
 <?php if (existsCandidat($userId)) { ?>
-        <button>Postuler concours</button>
+            <button>Postuler concours</button>
 <?php } else { ?>
-        <button>Consulter candidature</button>
+            <button>Consulter candidature</button>
 <?php } ?>
 
 
