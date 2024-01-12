@@ -9,14 +9,13 @@
 
 <?php
 include "../../config/database.php";
+include "../../controllers/userController.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    $addNewUserQuery = "INSERT INTO user (username, password) VALUES (?, ?)";
-    $stmt = $db->prepare($addNewUserQuery);
-    $stmt->execute([$username, $password]);
+    addNewUser($username, $password);
 
     header("Location: index.php");
 }
