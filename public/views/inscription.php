@@ -12,16 +12,18 @@ include "../../config/database.php";
 include "../../controllers/userController.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    addNewUser($username, $password);
+    if (isset($username) && isset($password) && !empty($username) && !empty($password)) {
+        addNewUser($username, $password);
+    }
 
-    header("Location: index.php");
+
 }
 
 ?>
-    
 
 <form action="" method="POST">
     <div>
@@ -31,10 +33,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div>
         <label for="">Mot de passe</label>
-        <input type="text" placeholder="Enter votre mot de passe" name="password">
+        <input type="password" placeholder="Enter votre mot de passe" name="password" class="password">
     </div>
+    <p class="msg">
+        
+    </p>
+
+    <p><?php echo $msg; ?></p>
 
     <button type="submit">S'inscrire</button>
 </form>
+
+<script src="../js/inscription.js"></script>
 </body>
 </html>

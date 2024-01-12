@@ -1,15 +1,30 @@
 <?php
+include "C:/xampp/htdocs/projets php/php-projet/config/database.php";
+$msg = "";
 
-include "../config/database.php";
 function addNewUser($username, $password)
 {
     global $db;
-    $addNewUserQuery = "INSERT INTO user (username, password) VALUES (?, ?)";
-    $stmt = $db->prepare($addNewUserQuery);
-    $stmt->execute([$username, $password]);
+    global $msg;
+    $getAllUsernames = "SELECT username FROM user";
+
+    $stmt = $db->query($getAllUsernames);
+
+    $usernamesData = $stmt->fetch();
+
+    if (strlen($password) < 8) {
+        return;
+    } else {
+        if (!in_array($username, $usernamesData)) {
+            $msg = "";
+            $addNewUserQuery = "INSERT INTO user (username, password) VALUES (?, ?)";
+            $stmt = $db->prepare($addNewUserQuery);
+            $stmt->execute([$username, $password]);
+            header("Location: index.php");
+        } else {
+            $msg = "ce nom d'utilisateur existe déjà";
+        }
+    }
 }
-
-
-
 
 ?>
