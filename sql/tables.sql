@@ -1,3 +1,7 @@
+SELECT * FROM User u, Candidat c
+WHERE u.id = ?
+AND c.user_id = ?
+
 -- User Table
 CREATE TABLE User (
     id INT PRIMARY KEY AUTO_INCREMENT,

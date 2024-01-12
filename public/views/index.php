@@ -22,7 +22,7 @@ echo "</div>";
 
 <div class="links">
     <a href="inscription.php" class="inscription-button">Créer un compte</a>
-    <a href="connexion.php" class="connection-button">Se connecter</a>
+    <a href="login.php" class="connection-button">Se connecter</a>
 </div>
 
 </body>
