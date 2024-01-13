@@ -10,7 +10,7 @@ password.addEventListener("keyup", () => {
     if (password.value.length < 8) {
         msg.innerHTML = "Le nombre minimal pour un mot de passe est de 8 caractères";
         msg.style.color = "red";
-    } else{
+    } else {
         msg.innerHTML = "";
     }
 })

@@ -20,15 +20,12 @@
    ?>
 
 
-
 <a href="login.php">
     <?php
     echo $username;
     session_destroy();
     ?>
 </a>
-
-
 
 <!-- <button>Consulter candidature</button> -->
 <?php if (existsCandidat($userId)) { ?>
