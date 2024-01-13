@@ -2,9 +2,25 @@ const form = document.querySelector("form");
 const password = document.querySelector(".password");
 const msg = document.querySelector(".msg");
 
+const username = document.querySelector(".username");
+const submit = document.querySelector(".submit");
+
 // form.addEventListener("submit", (e) => {
 //     e.preventDefault();
-// } )
+// })
+submit.disabled = true;
+
+
+// pas d'espace, pas de caractère spéciaux
+username.addEventListener("keyup", () => {
+    let motifRegex = /^[a-zA-Z0-9]+$/;
+    if (!motifRegex.test(username.value)) {
+        submit.disabled = true;
+    } else {
+        submit.disabled = false;
+    }
+})
+
 
 password.addEventListener("keyup", () => {
     if (password.value.length < 8) {

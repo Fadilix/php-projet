@@ -12,26 +12,45 @@
    if (isset($_SESSION["username"])) {
        $username = $_SESSION['username'];
    } else {
-       $username = "";
+       $username = "no username";
    }
 
-   $userId = $_SESSION["id"];
-   // echo $userId;
+     if (isset($_SESSION["id"])) {
+       $userId = $_SESSION['id'];
+   } else {
+       $userId = "";
+   }
+
+
+
+   if ($_SERVER["REQUEST_METHOD"] == "POST") {
+       $submit = $_POST["submit"];
+
+       if (isset($submit)) {
+           session_destroy();
+           header("Location: index.php");
+       }
+   }
    ?>
 
 
-<a href="login.php">
-    <?php
-    echo $username;
-    session_destroy();
-    ?>
-</a>
+
+<form action="" method="POST">
+
+    <button type="submit" name="submit">
+        <?php
+        echo $username;
+        ?>
+</button>
+</form>
+
+
 
 <!-- <button>Consulter candidature</button> -->
 <?php if (existsCandidat($userId)) { ?>
-            <button>Postuler concours</button>
+    <button>Postuler concours</button>
 <?php } else { ?>
-            <button>Consulter candidature</button>
+    <button>Consulter candidature</button>
 <?php } ?>
 
 

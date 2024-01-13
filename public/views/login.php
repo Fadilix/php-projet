@@ -42,6 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php echo $msg; ?>
     </p>
 
+
     <button type="submit" name="submit">Se connecter</button>
 </form>
 </body>

@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <form action="" method="POST">
     <div>
         <label for="">Nom d'utilisateur</label>
-        <input type="text" placeholder="Enter votre nom d'utilisateur" name="username">
+        <input type="text" placeholder="Enter votre nom d'utilisateur" name="username" class="username">
     </div>
 
     <div>
@@ -38,10 +38,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <p class="msg">
         
     </p>
+    <!-- Je ne -->
 
     <p><?php echo $msg; ?></p>
 
-    <button type="submit">S'inscrire</button>
+    <button type="submit" class="submit">S'inscrire</button>
 </form>
 
 <script src="../js/inscription.js"></script>
