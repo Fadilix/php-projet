@@ -30,7 +30,6 @@ const nationalite = document.querySelector(".nationalite");
     const countries = await fetchAllCountries();
     console.log(countries);
 
-
     for (let country of countries) {
         const option = document.createElement("option");
         option.value = country;

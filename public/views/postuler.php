@@ -97,7 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div>
 
             <label for="photo">Photo :</label>
-            <input type="file" name="photo" accept="image/*" required><br>
+            <input type="file" name="photo" accept="image/jpeg, image/png, image/bmp, image/webp" required><br>
         </div>
 
     <div>
