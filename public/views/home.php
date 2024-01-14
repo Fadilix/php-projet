@@ -15,11 +15,13 @@
        $username = "no username";
    }
 
-     if (isset($_SESSION["id"])) {
+   if (isset($_SESSION["id"])) {
        $userId = $_SESSION['id'];
    } else {
-       $userId = "";
+       $userId = -1;
    }
+
+
 
 
 
@@ -48,9 +50,13 @@
 
 <!-- <button>Consulter candidature</button> -->
 <?php if (existsCandidat($userId)) { ?>
-    <button>Postuler concours</button>
-<?php } else { ?>
-    <button>Consulter candidature</button>
+        <button>
+            <a href="consulter.php">Consulter candidature</a>
+        </button>
+    <?php } else { ?>
+        <button>
+            <a href="postuler.php">Postuler concours</a>
+        </button>
 <?php } ?>
 
 
