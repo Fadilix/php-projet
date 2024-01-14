@@ -9,6 +9,8 @@
    <?php
    include "../../controllers/candidatController.php";
    session_start();
+
+
    if (isset($_SESSION["username"])) {
        $username = $_SESSION['username'];
    } else {
@@ -23,8 +25,6 @@
 
 
 
-
-
    if ($_SERVER["REQUEST_METHOD"] == "POST") {
        $submit = $_POST["submit"];
 
@@ -34,7 +34,6 @@
        }
    }
    ?>
-
 
 
 <form action="" method="POST">

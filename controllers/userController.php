@@ -6,12 +6,12 @@ function addNewUser($username, $password)
 {
     global $db;
     global $msg;
-    
+
     // Chequer si l'utilsateur existe
     $checkUsernameQuery = "SELECT COUNT(*) as count FROM user WHERE username = ?";
     $stmt = $db->prepare($checkUsernameQuery);
     $stmt->execute([$username]);
-    $result = $stmt->fetch( );
+    $result = $stmt->fetch();
 
     if ($result['count'] > 0) {
         $msg = "Ce nom d'utilisateur existe déjà";
@@ -33,7 +33,7 @@ function addNewUser($username, $password)
 }
 
 
-
+// loger l'utilisateur en vérifiant son nom d'utilisateur et son mot de passe
 function logUser($username, $password)
 {
     global $db;
@@ -62,6 +62,17 @@ function logUser($username, $password)
     }
 }
 
+
+// Rechercher le username d'un utilisateur à partir de son id
+function getUsernameById($userId)
+{
+    global $db;
+    $getUserQuery = "SELECT * FROM user WHERE id = ?";
+    $stmt = $db->prepare($getUserQuery);
+    $stmt->execute([$userId]);
+    $userData = $stmt->fetch();
+    return $userData["username"];
+}
 
 
 ?>

@@ -1,4 +1,6 @@
 const apiKey = "tGZaJokj1ePV7LfPKeuA4f3B1dYndNDsnpdp8UCV";
+
+// rechercher les données des pays depuis l'api
 const fetchAllCountries = async () => {
     try {
         const response = await fetch(`https://countryapi.io/api/all?apikey=${apiKey}`);
@@ -18,8 +20,11 @@ const fetchAllCountries = async () => {
     }
 }
 
+
+// Récupérer nationalite depuis la page html
 const nationalite = document.querySelector(".nationalite");
 
+// Inserer les données récupérés
 (async () => {
 
     const countries = await fetchAllCountries();

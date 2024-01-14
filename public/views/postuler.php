@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div>
         <label for="date_naissance">Date de naissance :</label>
-        <input type="date" name="date_naiss" required><br>
+        <input type="date" name="date_naiss" min="1990-01-01" required><br>
     </div>
 
     <div>
