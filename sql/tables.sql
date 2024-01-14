@@ -1,8 +1,3 @@
--- Verifier si un utilisateur a postulé à un concours
-SELECT * FROM User u, Candidat c
-WHERE u.id = ?
-AND c.id_user = ?
-
 -- User Table
 CREATE TABLE User (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -41,3 +36,9 @@ CREATE TABLE Administrateur (
     username VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL
 );
+
+
+-- Verifier si un utilisateur a postulé à un concours
+SELECT * FROM User u, Candidat c
+WHERE u.id = ?
+AND c.id_user = ?
