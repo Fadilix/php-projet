@@ -112,19 +112,19 @@ function updateCandidat(
     $candidatData = $stmt->fetch();
 
     // Prepare the query
-    $updateCandidatQuery = "UPDATE candidats SET
+    $updateCandidatQuery = "UPDATE candidat SET
                             nom = ?,
                             prenom = ?,
-                            date_naissance = ?,
+                            date_naiss = ?,
                             sexe = ?,
                             nationalite = ?,
-                            annee_bac = ?,
-                            serie_bac = ?,
+                            annee_bac2 = ?,
+                            serie = ?,
                             photo = ?,
-                            copie_naissance = ?,
-                            copie_nationalite = ?,
-                            copie_attestation = ?
-                            WHERE id_user = ?";
+                            copie_nais = ?,
+                            copie_nation = ?,
+                            copie_attes_bac2 = ?
+                            WHERE id = ?";
 
     // Bind parameters and execute the query
     $stmt = $db->prepare($updateCandidatQuery);
@@ -138,11 +138,11 @@ function updateCandidat(
         $nationalite,
         $anneeBac,
         $serieBac,
-        $photo == null ? $candidatData["photo"] : $photo,
-        $copieNais == null ? $candidatData["copie_nais"] : $copieNais,
-        $copieNation == null ? $candidatData["copie_nation"] : $copieNation,
-        $copieAttes == null ? $candidatData["copie_attes_bac2"]: $copieAttes,
-        $id_user,
+        $photo == "" ? $candidatData["photo"] : $photo,
+        $copieNais == "" ? $candidatData["copie_nais"] : $copieNais,
+        $copieNation == "" ? $candidatData["copie_nation"] : $copieNation,
+        $copieAttes == "" ? $candidatData["copie_attes_bac2"]: $copieAttes,
+        $candidatId,
     ];
 
     // Append the parameters to the execute function

@@ -12,14 +12,15 @@
     include "../../controllers/userController.php";
     include "../../config/database.php";
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $candidatId = (int) $_POST["candidat_id"];
-        $getCandidatQuery = "SELECT * FROM candidat WHERE id = ?";
 
-        $stmt = $db->prepare($getCandidatQuery);
-        $stmt->execute([$candidatId]);
-        $candidatData = $stmt->fetch();
-        $username = getUsernameById($_SESSION["id"]);
+    $candidatId = (int) $_GET["candidat_id"];
+    $getCandidatQuery = "SELECT * FROM candidat WHERE id = ?";
+
+    $stmt = $db->prepare($getCandidatQuery);
+    $stmt->execute([$candidatId]);
+    $candidatData = $stmt->fetch();
+    $username = getUsernameById($_SESSION["id"]);
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (isset($_POST["submit"])) {
             $userId = $_SESSION["id"];
@@ -32,13 +33,13 @@
             $serieBac = $_POST["serie_bac"];
 
             // Gérer les fichiers
-            $photo = $_FILES["photo"]["name"] ? $_FILES["photo"]["name"] : null;
-            $copieNais = $_FILES["copie_naiss"]["name"] ? $_FILES["copie_naiss"]["name"] : null;
-            $copieNation = $_FILES["copie_nation"]["name"] ? $_FILES["copie_nation"]["name"] : null;
-            $attestBac = $_FILES["attest_bac"]["name"] ? $_FILES["attest_bac"]["name"] : null;
+            $photo = $_FILES["photo"]["name"];
+            $copieNais = $_FILES["copie_naiss"]["name"];
+            $copieNation = $_FILES["copie_nation"]["name"];
+            $attestBac = $_FILES["attest_bac"]["name"];
 
             // validation pour le formulaire
-            if (empty($nom) || empty($prenom) || empty($dateNais) || empty($sexe) || empty($nationalite) || empty($anneeBac) || empty($serieBac) || empty($photo) || empty($copieNais) || empty($copieNation) || empty($attestBac)) {
+            if (empty($nom) || empty($prenom) || empty($dateNais) || empty($sexe) || empty($nationalite) || empty($anneeBac) || empty($serieBac)) {
                 echo "Tous les champs sont réquis";
                 exit;
             }
@@ -59,6 +60,13 @@
                 $candidatId
             );
 
+            $userDirectory = "../../uploads/$username";
+            move_uploaded_file($_FILES["photo"]["tmp_name"], "$userDirectory/photo/" . $photo);
+            move_uploaded_file($_FILES["copie_naiss"]["tmp_name"], "$userDirectory/copie_naiss/" . $copieNais);
+            move_uploaded_file($_FILES["copie_nation"]["tmp_name"], "$userDirectory/copie_nation/" . $copieNation);
+            move_uploaded_file($_FILES["attest_bac"]["tmp_name"], "$userDirectory/attest_bac/" . $attestBac);
+
+            exit;
         }
     }
 
@@ -97,12 +105,12 @@
         <label for="sexe">Sexe (M ou F) :</label>
         <input type="radio" value="M" name="sexe"
          <?php if ($candidatData["sexe"] == "M") { ?>
-                    checked
+                                checked
         <?php } ?>
         >M
         <input type="radio" value="F" name="sexe"
         <?php if ($candidatData["sexe"] == "F") { ?>
-                    checked
+                                checked
         <?php } ?>
         >F
     </div>

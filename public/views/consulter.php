@@ -57,8 +57,7 @@ $username = getUsernameById($userId);
     <td><a href='../../uploads/<?php echo $username; ?>/copie_nation/<?php echo $candidatData['copie_nation']; ?>' download>Télécharger</a></td>
     <td><a href='../../uploads/<?php echo $username; ?>/attest_bac/<?php echo $candidatData['copie_attes_bac2']; ?>' download>Télécharger</a></td>
     <td>
-        <form action="modifierCandidat.php" method="POST">
-            <input type="hidden" name="candidat_id" value="<?php echo $candidatData["id"] ?>">
+        <form action="modifierCandidat.php?candidat_id=<?php echo $candidatData["id"] ?>" method="POST">
             <button type="submit">Modifier</button>
         </form>
     </td>
