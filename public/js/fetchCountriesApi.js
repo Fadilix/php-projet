@@ -1,4 +1,4 @@
-const apiKey = "tGZaJokj1ePV7LfPKeuA4f3B1dYndNDsnpdp8UCV";
+const apiKey = "2mKIvuGPExLPPSDw73COAqvKhMaHKcszCYOdJ4Gz";
 
 // rechercher les données des pays depuis l'api
 const fetchAllCountries = async () => {
