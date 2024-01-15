@@ -1,7 +1,7 @@
 <?php
 // session_start();
 
-include "C:/xampp/htdocs/projets php/php-projet/config/database.php";
+include "C:/xampp/htdocs/projets php/php_p/php-projet/config/database.php";
 
 // verifier si le candidat a déjà postulé ou pas
 function existsCandidat($userId)

@@ -1,5 +1,5 @@
 <?php
-include "C:/xampp/htdocs/projets php/php-projet/config/database.php";
+include "C:/xampp/htdocs/projets php/php_p/php-projet/config/database.php";
 $msg = "";
 
 function addNewUser($username, $password)

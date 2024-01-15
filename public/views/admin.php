@@ -59,5 +59,10 @@ $stmt = $db->query($query);
     <?php echo "Erreur lors de l'exécution de la query" . implode(" ", $db->errorInfo()); ?>
 <?php } ?>
 
+<form action="">
+    <button>Modifier date limite de depôt de candidature</button>
+    <button>Modifier date du concours</button>
+</form>
+
 </body>
 </html>
