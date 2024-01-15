@@ -141,7 +141,7 @@ function updateCandidat(
         $photo == "" ? $candidatData["photo"] : $photo,
         $copieNais == "" ? $candidatData["copie_nais"] : $copieNais,
         $copieNation == "" ? $candidatData["copie_nation"] : $copieNation,
-        $copieAttes == "" ? $candidatData["copie_attes_bac2"]: $copieAttes,
+        $copieAttes == "" ? $candidatData["copie_attes_bac2"] : $copieAttes,
         $candidatId,
     ];
 

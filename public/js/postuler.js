@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // console.log(currentYear);
     // console.log(yearsArray);
 
-    for(year of yearsArray) {
+    for (year of yearsArray) {
         menuAnnee.innerHTML += `<option value=${year} name="annee_bac">${year}</option>`;
     }
 });

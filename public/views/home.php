@@ -49,13 +49,13 @@
 
 <!-- <button>Consulter candidature</button> -->
 <?php if (existsCandidat($userId)) { ?>
-        <button>
-            <a href="consulter.php">Consulter candidature</a>
-        </button>
+            <button>
+                <a href="consulter.php">Consulter candidature</a>
+            </button>
     <?php } else { ?>
-        <button>
-            <a href="postuler.php">Postuler concours</a>
-        </button>
+            <button>
+                <a href="postuler.php">Postuler concours</a>
+            </button>
 <?php } ?>
 
 

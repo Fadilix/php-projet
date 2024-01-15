@@ -14,7 +14,7 @@ submit.disabled = true;
 // pas d'espace, pas de caractère spéciaux
 username.addEventListener("keyup", () => {
     let motifRegex = /^[a-zA-Z0-9]+$/;
-    if (!motifRegex.test(username.value)  || username.value === "") {
+    if (!motifRegex.test(username.value) || username.value === "") {
         submit.disabled = true;
     }
 
