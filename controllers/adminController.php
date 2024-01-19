@@ -54,7 +54,7 @@ function logAdmin($username, $password)
         session_start();
         $_SESSION["admin_name"] = $username;
         $_SESSION["admin_id"] = $userId;
-        header("Location: dashboard.php");
+        header("Location: admin.php");
         exit;
     } else {
         $msg = "Connexion échouée. Le mot de passe ou le nom d'utilisateur n'est pas correct.";
