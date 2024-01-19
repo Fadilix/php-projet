@@ -14,6 +14,8 @@ include "../../controllers/userController.php";
 
 $query = "SELECT * FROM candidat";
 $stmt = $db->query($query);
+
+
 ?>
 
 <?php if ($stmt) { ?>
@@ -59,9 +61,12 @@ $stmt = $db->query($query);
         <?php echo "Erreur lors de l'exécution de la query" . implode(" ", $db->errorInfo()); ?>
 <?php } ?>
 
-<form action="">
-    <button>Modifier date limite de depôt de candidature</button>
-    <button>Modifier date du concours</button>
+<form action="dateCandid.php">
+    <button type="submit" name="dateCandid">Modifier date limite de depôt de candidature</button>
+</form>
+
+<form action="dateConc.php">
+    <button type="submit" name="dateConc">Modifier date du concours</button>
 </form>
 
 </body>
