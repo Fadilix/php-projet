@@ -159,7 +159,7 @@ function updateCandidat(
 function listCandidatsInscritParSexe()
 {
     global $db;
-    $candidatesPerSexQuery = "SELECT sexe, COUNT(*) as total FROM candidat GROUP BY sexe";
+    $candidatesPerSexQuery = "SELECT *, COUNT(*) as total FROM candidat GROUP BY sexe";
     $stmt = $db->prepare($candidatesPerSexQuery);
     $stmt->execute();
     return $stmt->fetch();
@@ -167,7 +167,7 @@ function listCandidatsInscritParSexe()
 
 function listCandidatsParNation(){
     global $db;
-    $candidatParNation = "SELECT nationalite, COUNT(*) as total FROM candidat GROUP BY nationalite";
+    $candidatParNation = "SELECT *, COUNT(*) as total FROM candidat GROUP BY nationalite";
     $stmt = $db->prepare($candidatParNation);
     $stmt->execute();
     return $stmt->fetch();
@@ -175,7 +175,7 @@ function listCandidatsParNation(){
 
 function listCandidatsInscritDouble(){
     global $db;
-    $candidatInscritDoubleQuery = "SELECT nom, prenom, COUNT(*) as occurrences FROM candidat GROUP BY nom, prenom HAVING occurrences > 1";
+    $candidatInscritDoubleQuery = "SELECT *, COUNT(*) as occurrences FROM candidat GROUP BY nom, prenom HAVING occurrences > 1";
     $stmt = $db->prepare($candidatInscritDoubleQuery);
     $stmt->execute();
     return $stmt->fetch();
@@ -183,7 +183,7 @@ function listCandidatsInscritDouble(){
 
 function listeCandOmisDupload(){
     global $db;
-    $omisDuploadQuery = "SELECT nom, prenom FROM candidat WHERE copie_nais IS NULL OR copie_nation IS NULL OR copie_attes_bac2 IS NULL";
+    $omisDuploadQuery = "SELECT * FROM candidat WHERE copie_nais IS NULL OR copie_nation IS NULL OR copie_attes_bac2 IS NULL";
     $stmt = $db->prepare($omisDuploadQuery);
     $stmt->execute();
     return $stmt->fetch();
