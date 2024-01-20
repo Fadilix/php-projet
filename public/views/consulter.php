@@ -45,24 +45,24 @@ $username = getUsernameById($userId);
 
 
 <tr>
-    <td><?php echo $candidatData['nom']; ?></td>
-    <td><?php echo $candidatData['prenom']; ?></td>
-    <td><img src='../../uploads/<?php echo $username; ?>/photo/<?php echo $candidatData['photo']; ?>' alt='Photo' width='50'></td>
-    <td><?php echo $candidatData['date_naiss']; ?></td>
-    <td><?php echo $candidatData['sexe']; ?></td>
-    <td><?php echo $candidatData['nationalite']; ?></td>
-    <td><?php echo $candidatData['annee_bac2']; ?></td>
-    <td><?php echo $candidatData['serie']; ?></td>
-    <td><a href="../../uploads/<?php echo $username; ?>/copie_naiss/<?php echo $candidatData['copie_nais']; ?>" download>Télécharger</a></td>
-    <td><a href='../../uploads/<?php echo $username; ?>/copie_nation/<?php echo $candidatData['copie_nation']; ?>' download>Télécharger</a></td>
-    <td><a href='../../uploads/<?php echo $username; ?>/attest_bac/<?php echo $candidatData['copie_attes_bac2']; ?>' download>Télécharger</a></td>
-    <td>
+    <td data-cell="Nom"><?php echo $candidatData['nom']; ?></td>
+    <td data-cell="Prenom"><?php echo $candidatData['prenom']; ?></td>
+    <td data-cell="Photo"><img src='../../uploads/<?php echo $username; ?>/photo/<?php echo $candidatData['photo']; ?>' alt='Photo' width='50'></td>
+    <td data-cell="Date de naissance"><?php echo $candidatData['date_naiss']; ?></td>
+    <td data-cell="Sexe"><?php echo $candidatData['sexe']; ?></td>
+    <td data-cell="Nationalité"><?php echo $candidatData['nationalite']; ?></td>
+    <td data-cell="Année d'obtention de BAC II"><?php echo $candidatData['annee_bac2']; ?></td>
+    <td data-cell="Serie"><?php echo $candidatData['serie']; ?></td>
+    <td data-cell="Copie de naissance"><a href="../../uploads/<?php echo $username; ?>/copie_naiss/<?php echo $candidatData['copie_nais']; ?>" download>Télécharger</a></td>
+    <td data-cell="Copie de nationalité"><a href='../../uploads/<?php echo $username; ?>/copie_nation/<?php echo $candidatData['copie_nation']; ?>' download>Télécharger</a></td>
+    <td data-cell="Copie de l'attestation de BAC II"><a href='../../uploads/<?php echo $username; ?>/attest_bac/<?php echo $candidatData['copie_attes_bac2']; ?>' download>Télécharger</a></td>
+    <td data-cell="Modifier">
         <form action="modifierCandidat.php?candidat_id=<?php echo $candidatData["id"] ?>" method="POST">
             <button type="submit">Modifier</button>
         </form>
     </td>
 
-    <td>
+    <td data-cell="modifier">
         <form action="" method="POST">
             <button type="submit">Supprimer</button>
         </form>

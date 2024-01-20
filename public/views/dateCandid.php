@@ -15,10 +15,9 @@ $dateLimDepot = getCandidDate();
 // echo $dateLimDepot["date_lim_dep"];
 
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $newCandiDate = $_POST["new_date"];
-
-    
+    modifyCandidDate($newCandiDate);
 }
 ?>
 
