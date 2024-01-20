@@ -155,4 +155,68 @@ function updateCandidat(
     }
 }
 
-?>
+
+function listCandidatsInscritParSexe()
+{
+    global $db;
+    $candidatesPerSexQuery = "SELECT sexe, COUNT(*) as total FROM candidat GROUP BY sexe";
+    $stmt = $db->prepare($candidatesPerSexQuery);
+    $stmt->execute();
+    return $stmt->fetch();
+}
+
+function listCandidatsParNation(){
+    global $db;
+    $candidatParNation = "SELECT nationalite, COUNT(*) as total FROM candidat GROUP BY nationalite";
+    $stmt = $db->prepare($candidatParNation);
+    $stmt->execute();
+    return $stmt->fetch();
+}
+
+function listCandidatsInscritDouble(){
+    global $db;
+    $candidatInscritDoubleQuery = "SELECT nom, prenom, COUNT(*) as occurrences FROM candidat GROUP BY nom, prenom HAVING occurrences > 1";
+    $stmt = $db->prepare($candidatInscritDoubleQuery);
+    $stmt->execute();
+    return $stmt->fetch();
+}
+
+function listeCandOmisDupload(){
+    global $db;
+    $omisDuploadQuery = "SELECT nom, prenom FROM candidat WHERE copie_nais IS NULL OR copie_nation IS NULL OR copie_attes_bac2 IS NULL";
+    $stmt = $db->prepare($omisDuploadQuery);
+    $stmt->execute();
+    return $stmt->fetch();
+}
+
+function nombreTotalDinscrit(){
+    global $db;
+    $nombreTotalInscritQuery = "SELECT COUNT(*) as total FROM candidat";
+    $stmt = $db->prepare($nombreTotalInscritQuery);
+    $stmt->execute();
+    return $stmt->fetch();
+}
+
+function nombreCandidNation(){
+    global $db;
+    $nbTotalNationQuery = "SELECT nationalite, COUNT(*) as total FROM candidat GROUP BY nationalite";
+    $stmt = $db->prepare($nbTotalNationQuery);
+    $stmt->execute();
+    return $stmt->fetch();
+}
+
+function nombreCandParSerie(){
+    global $db;
+    $nbCandParSerieQuery = "SELECT serie, COUNT(*) as total FROM candidat GROUP BY serie";
+    $stmt = $db->prepare($nbCandParSerieQuery);
+    $stmt->execute();
+    return $stmt->fetch();
+}
+
+function nbCandParSexe(){
+    global $db;
+    $nbCandParSexeQuery = "SELECT sexe, COUNT(*) as total FROM candidat GROUP BY sexe";
+    $stmt = $db->prepare($nbCandParSexeQuery);
+    $stmt->execute();
+    return $stmt->fetch();
+}
