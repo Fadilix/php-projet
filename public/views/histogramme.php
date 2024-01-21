@@ -23,13 +23,16 @@ function getRegistrationStatisticsByNationality()
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Registration Statistics</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
         google.charts.setOnLoadCallback(drawChart);
 
         function drawChart() {
@@ -42,9 +45,15 @@ function getRegistrationStatisticsByNationality()
 
             var options = {
                 title: 'Student Registration Statistics by Nationality',
-                legend: { position: 'none' },
+                legend: {
+                    position: 'none'
+                },
                 seriesType: 'bars',
-                series: { 1: { type: 'line' } },
+                series: {
+                    1: {
+                        type: 'line'
+                    }
+                },
             };
 
             var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
@@ -77,7 +86,7 @@ function getRegistrationStatisticsByNationality()
             height: 700px;
         }
 
-        
+
         @media screen and (min-width: 768px) {
             #sidebar {
                 flex-basis: 300px;
@@ -89,6 +98,7 @@ function getRegistrationStatisticsByNationality()
         }
     </style>
 </head>
+
 <body>
     <div id="sidebar">
         <?php include "../components/adminSidebar.php" ?>
@@ -97,4 +107,5 @@ function getRegistrationStatisticsByNationality()
         <div id="chart_div"></div>
     </div>
 </body>
+
 </html>

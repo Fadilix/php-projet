@@ -165,7 +165,8 @@ function listCandidatsInscritParSexe()
     return $stmt->fetchAll();
 }
 
-function listCandidatsParNation(){
+function listCandidatsParNation()
+{
     global $db;
     $candidatParNation = "SELECT *, COUNT(*) as total FROM candidat GROUP BY nationalite";
     $stmt = $db->prepare($candidatParNation);
@@ -173,7 +174,8 @@ function listCandidatsParNation(){
     return $stmt->fetchAll();
 }
 
-function listCandidatsInscritDouble(){
+function listCandidatsInscritDouble()
+{
     global $db;
     $candidatInscritDoubleQuery = "SELECT *, COUNT(*) as occurrences FROM candidat GROUP BY nom, prenom HAVING occurrences > 1";
     $stmt = $db->prepare($candidatInscritDoubleQuery);
@@ -181,7 +183,8 @@ function listCandidatsInscritDouble(){
     return $stmt->fetchAll();
 }
 
-function listeCandOmisDupload(){
+function listeCandOmisDupload()
+{
     global $db;
     $omisDuploadQuery = "SELECT * FROM candidat WHERE copie_nais IS NULL OR copie_nation IS NULL OR copie_attes_bac2 IS NULL";
     $stmt = $db->prepare($omisDuploadQuery);
@@ -189,7 +192,8 @@ function listeCandOmisDupload(){
     return $stmt->fetchAll();
 }
 
-function nombreTotalDinscrit(){
+function nombreTotalDinscrit()
+{
     global $db;
     $nombreTotalInscritQuery = "SELECT COUNT(*) as total FROM candidat";
     $stmt = $db->prepare($nombreTotalInscritQuery);
@@ -197,7 +201,8 @@ function nombreTotalDinscrit(){
     return $stmt->fetchAll();
 }
 
-function nombreCandidNation(){
+function nombreCandidNation()
+{
     global $db;
     $nbTotalNationQuery = "SELECT nationalite, COUNT(*) as total FROM candidat GROUP BY nationalite";
     $stmt = $db->prepare($nbTotalNationQuery);
@@ -205,7 +210,8 @@ function nombreCandidNation(){
     return $stmt->fetchAll();
 }
 
-function nombreCandParSerie(){
+function nombreCandParSerie()
+{
     global $db;
     $nbCandParSerieQuery = "SELECT serie, COUNT(*) as total FROM candidat GROUP BY serie";
     $stmt = $db->prepare($nbCandParSerieQuery);
@@ -213,7 +219,8 @@ function nombreCandParSerie(){
     return $stmt->fetchAll();
 }
 
-function nbCandParSexe(){
+function nbCandParSexe()
+{
     global $db;
     $nbCandParSexeQuery = "SELECT sexe, COUNT(*) as total FROM candidat GROUP BY sexe";
     $stmt = $db->prepare($nbCandParSexeQuery);

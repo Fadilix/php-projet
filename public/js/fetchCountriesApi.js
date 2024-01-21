@@ -247,7 +247,7 @@ countries = [
 const nationalite = document.querySelector(".nationalite");
 
 
-for(country of countries){
+for (country of countries) {
     let option = document.createElement("option");
     option.textContent = country.name;
     option.value = country.name;

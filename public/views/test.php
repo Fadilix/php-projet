@@ -1,10 +1,9 @@
 <?php
 session_start();
 
-if (isset($_SESSION["id"])){
+if (isset($_SESSION["id"])) {
     $id = $_SESSION["id"];
     echo $id;
-} else{
+} else {
     echo "no id";
 }
-?>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -100,59 +101,59 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="file" name="photo" accept="image/jpeg, image/png, image/bmp, image/webp" required><br>
         </div>
 
-    <div>
-        <label for="date_naissance">Date de naissance :</label>
-        <input type="date" name="date_naiss" min="1990-01-01" required><br>
-    </div>
+        <div>
+            <label for="date_naissance">Date de naissance :</label>
+            <input type="date" name="date_naiss" min="1990-01-01" required><br>
+        </div>
 
-    <div>
+        <div>
 
-        <label for="sexe">Sexe (M ou F) :</label>
-        <input type="radio" value="M" name="sexe">M
-        <input type="radio" value="F" name="sexe">F
-    </div>
-
-
-    <div>
-
-        <label for="nationalite">Nationalité :</label>
-        <select name="nationalite" id="" class="nationalite" required></select>
-    </div>
-
-    <div>
-        <label for="annee_bac">Année d'obtention du BAC II :</label>
-        <select value="" class="menu_annee" name="annee_bac" required></select>
-    </div>
-
-    <div>
-        <label for="serie_bac">Série du BAC (C, D, E, F1 ou F2) :</label>
-        <select name="serie_bac" id="" required>
-            <option value="C" name="serie_bac">C</option>
-            <option value="D" name="serie_bac">D</option>
-            <option value="E" name="serie_bac">E</option>
-            <option value="F1" name="serie_bac">F1</option>
-            <option value="F2" name="serie_bac">F2</option>
-        </select>
-    </div>
+            <label for="sexe">Sexe (M ou F) :</label>
+            <input type="radio" value="M" name="sexe">M
+            <input type="radio" value="F" name="sexe">F
+        </div>
 
 
-    <div>
-        <label for="copie_naissance">Copie de la naissance (PDF) :</label>
-        <input type="file" name="copie_naiss" accept=".pdf" required><br>
-    </div>
+        <div>
 
-    <div>
-        <label for="copie_nationalite">Copie de la nationalité (PDF) :</label>
-        <input type="file" name="copie_nation" accept=".pdf" required><br>
-    </div>
+            <label for="nationalite">Nationalité :</label>
+            <select name="nationalite" id="" class="nationalite" required></select>
+        </div>
+
+        <div>
+            <label for="annee_bac">Année d'obtention du BAC II :</label>
+            <select value="" class="menu_annee" name="annee_bac" required></select>
+        </div>
+
+        <div>
+            <label for="serie_bac">Série du BAC (C, D, E, F1 ou F2) :</label>
+            <select name="serie_bac" id="" required>
+                <option value="C" name="serie_bac">C</option>
+                <option value="D" name="serie_bac">D</option>
+                <option value="E" name="serie_bac">E</option>
+                <option value="F1" name="serie_bac">F1</option>
+                <option value="F2" name="serie_bac">F2</option>
+            </select>
+        </div>
 
 
-    <div>
+        <div>
+            <label for="copie_naissance">Copie de la naissance (PDF) :</label>
+            <input type="file" name="copie_naiss" accept=".pdf" required><br>
+        </div>
 
-        <label for="attestation_bac">Attestation du BAC II (PDF) :</label>
-        <input type="file" name="attest_bac" accept=".pdf" required><br>
-    </div>
-        
+        <div>
+            <label for="copie_nationalite">Copie de la nationalité (PDF) :</label>
+            <input type="file" name="copie_nation" accept=".pdf" required><br>
+        </div>
+
+
+        <div>
+
+            <label for="attestation_bac">Attestation du BAC II (PDF) :</label>
+            <input type="file" name="attest_bac" accept=".pdf" required><br>
+        </div>
+
         <input type="submit" value="Soumettre">
     </form>
 
@@ -160,4 +161,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="../js/postuler.js"></script>
     <script src="../js/fetchCountriesApi.js"></script>
 </body>
+
 </html>

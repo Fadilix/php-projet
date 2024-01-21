@@ -70,9 +70,3 @@ function getUsernameById($userId)
     $userData = $stmt->fetch();
     return $userData["username"];
 }
-
-
-
-
-
-?>

@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Animated Blob Menu</title>
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap');
-		body, html {
+
+		body,
+		html {
 			font-family: 'Manrope', sans-serif;
 			margin: 0;
 			padding: 0;
@@ -19,7 +22,7 @@
 			color: white;
 			transition: .3s all ease;
 
-			&:hover{
+			&:hover {
 				color: #c1c1c1;
 			}
 		}
@@ -99,9 +102,10 @@
 		}
 
 
-		li{
+		li {
 			width: 200px;
 		}
+
 		ul li {
 			color: #fff;
 			font-family: sans-serif;
@@ -120,6 +124,7 @@
 		}
 	</style>
 </head>
+
 <body>
 	<div id="menu">
 		<div class="hamburger">
@@ -138,15 +143,16 @@
 			</ul>
 		</div>
 		<svg version="1.1" id="blob" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-			<path id="blob-path" d="M60,500H0V0h60c0,0,20,172,20,250S60,900,60,500z"/>
+			<path id="blob-path" d="M60,500H0V0h60c0,0,20,172,20,250S60,900,60,500z" />
 		</svg>
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<script>
-		$(document).ready(function () {
+		$(document).ready(function() {
 			var height = window.innerHeight,
-				x = 0, y = height / 2,
+				x = 0,
+				y = height / 2,
 				curveX = 10,
 				curveY = 0,
 				targetX = 0,
@@ -158,17 +164,17 @@
 				blobPath = $('#blob-path'),
 				hamburger = $('.hamburger');
 
-			$(document).on('mousemove', function (e) {
+			$(document).on('mousemove', function(e) {
 				x = e.pageX;
 				y = e.pageY;
 			});
 
-			$('.hamburger, .menu-inner').on('mouseenter', function () {
+			$('.hamburger, .menu-inner').on('mouseenter', function() {
 				$(this).parent().addClass('expanded');
 				menuExpanded = true;
 			});
 
-			$('.menu-inner').on('mouseleave', function () {
+			$('.menu-inner').on('mouseleave', function() {
 				menuExpanded = false;
 				$(this).parent().removeClass('expanded');
 			});
@@ -226,4 +232,5 @@
 		});
 	</script>
 </body>
+
 </html>

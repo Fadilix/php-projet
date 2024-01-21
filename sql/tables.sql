@@ -39,6 +39,6 @@ CREATE TABLE Administrateur (
 
 
 -- Verifier si un utilisateur a postulé à un concours
-SELECT * FROM User u, Candidat c
-WHERE u.id = ?
-AND c.id_user = ?
+-- SELECT * FROM User u, Candidat c
+-- WHERE u.id = ?
+-- AND c.id_user = ?

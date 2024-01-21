@@ -25,7 +25,7 @@
     <div class="table-container">
 
         <table border="1">
-        <div style="display: flex; align-items:center; gap: 10px;">
+            <div style="display: flex; align-items:center; gap: 10px;">
                 <p>Date du concours : <?php echo getConcDate()["date_conc"]; ?> </p>
 
                 <form action="dateCandid.php">

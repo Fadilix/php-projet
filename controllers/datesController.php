@@ -40,5 +40,3 @@ function modifyConcDate($newConcDate)
 
     header("Location: admin.php");
 }
-
-?>

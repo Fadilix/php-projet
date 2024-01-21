@@ -60,6 +60,3 @@ function logAdmin($username, $password)
         $msg = "Connexion échouée. Le mot de passe ou le nom d'utilisateur n'est pas correct.";
     }
 }
-
-
-?>
