@@ -2,7 +2,8 @@
 // Include your database configuration
 include "C:/xampp/htdocs/projets php/php_p/php-projet/config/database.php";
 
-function getRegistrationStatisticsByNationality() {
+function getRegistrationStatisticsByNationality()
+{
     global $db;
 
     $query = "SELECT nationalite, COUNT(*) as total FROM candidat GROUP BY nationalite";
@@ -11,17 +12,15 @@ function getRegistrationStatisticsByNationality() {
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     $data = array();
-    $data[] = ['Nationalite', 'Nombre total d\'étudiant'];
 
     foreach ($results as $row) {
-        $data[] = [$row['nationalite'], (int)$row['total']];
+        $data[] = [$row['nationalite'], (int) $row['total']];
     }
 
     return json_encode($data);
 }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,14 +43,45 @@ function getRegistrationStatisticsByNationality() {
             var options = {
                 title: 'Student Registration Statistics by Nationality',
                 legend: { position: 'none' },
+                seriesType: 'bars',
+                series: { 1: { type: 'line' } },
             };
 
-            var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
+            var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
             chart.draw(data, options);
         }
     </script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        #sidebar {
+            width: 300px;
+            position: absolute;
+            z-index: 10;
+        }
+
+        #chart_container {
+            flex: 1;
+            padding: 20px;
+        }
+
+        #chart_div {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
 </head>
 <body>
-    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+    <div id="sidebar">
+        <?php include "../components/adminSidebar.php" ?>
+    </div>
+    <div id="chart_container">
+        <div id="chart_div"></div>
+    </div>
 </body>
 </html>

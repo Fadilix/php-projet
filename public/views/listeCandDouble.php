@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/table.css">
+    <style>
+
+        .sidebar{
+            width: 200px;
+        }
+    </style>
 </head>
 <body>
 <?php
@@ -11,12 +18,34 @@
 include "C:/xampp/htdocs/projets php/php_p/php-projet/controllers/candidatController.php";
 
 session_start();
+include "../../controllers/datesController.php";
+include "../../controllers/userController.php";
 
 $candidats = listCandidatsInscritDouble();
 
 ?>
+<div class="sidebar">
+    <?php include "../components/adminSidebar.php" ?>
+</div>
 
+<div class="table-container">
 <table border="1">
+<div style="display: flex; align-items:center; gap: 10px;">
+        <p>Date du concours : <?php echo getConcDate()["date_conc"]; ?> </p>
+            
+        <form action="dateCandid.php">
+            <button type="submit" name="dateCandid">Modifier</button>
+        </form>
+    </div>
+    <div style="display: flex; align-items:center; gap: 10px;">
+
+        <p>Date limite de dépôt de candid : <?php echo getCandidDate()["date_lim_dep"]; ?></p>
+
+        <form action="dateConc.php">
+            <button type="submit" name="dateConc">Modifier</button>
+        </form>
+    </div>
+    <caption>Liste des candidats inscrits doublement</caption>
     <tr>
         <th>Nom</th>
         <th>Prenom</th>
@@ -51,5 +80,7 @@ $candidats = listCandidatsInscritDouble();
             </tr>
     <?php } ?>
 </table>
+</div>
+
 </body>
 </html>
