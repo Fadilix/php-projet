@@ -154,7 +154,6 @@
 
 
         <div>
-
             <label for="attestation_bac">Attestation du BAC II (PDF) :</label>
             <input type="file" name="attest_bac" accept=".pdf"><br>
             <span>Copie attestation BAC II actuelle: <?php echo $candidatData['copie_attes_bac2']; ?></span><br>

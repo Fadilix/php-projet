@@ -42,7 +42,7 @@
                         <button type="submit" name="dateConc">Modifier</button>
                     </form>
                 </div>
-                <caption>Liste de tous les étudiants</caption>
+                <caption>Liste de tous les candidats inscrits</caption>
                 <tr>
                     <th>ID</th>
                     <th>Nom</th>

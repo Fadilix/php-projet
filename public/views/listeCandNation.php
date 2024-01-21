@@ -22,23 +22,23 @@
     </div>
 
     <div class="table-container">
-        <div style="display: flex; align-items:center; gap: 10px;">
-            <p>Date du concours : <?php echo getConcDate()["date_conc"]; ?> </p>
-
-            <form action="dateCandid.php">
-                <button type="submit" name="dateCandid">Modifier</button>
-            </form>
-        </div>
-        <div style="display: flex; align-items:center; gap: 10px;">
-
-            <p>Date limite de dépôt de candid : <?php echo getCandidDate()["date_lim_dep"]; ?></p>
-
-            <form action="dateConc.php">
-                <button type="submit" name="dateConc">Modifier</button>
-            </form>
-        </div>
-        <caption>Liste de tous les étudiants</caption>
         <table border="1">
+            <div style="display: flex; align-items:center; gap: 10px;">
+                <p>Date du concours : <?php echo getConcDate()["date_conc"]; ?> </p>
+    
+                <form action="dateCandid.php">
+                    <button type="submit" name="dateCandid">Modifier</button>
+                </form>
+            </div>
+            <div style="display: flex; align-items:center; gap: 10px;">
+    
+                <p>Date limite de dépôt de candid : <?php echo getCandidDate()["date_lim_dep"]; ?></p>
+    
+                <form action="dateConc.php">
+                    <button type="submit" name="dateConc">Modifier</button>
+                </form>
+            </div>
+            <caption>Liste des candidats inscrits par nationalité</caption>
             <tr>
                 <th>Nom</th>
                 <th>Prenom</th>
