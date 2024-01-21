@@ -204,7 +204,7 @@ function nombreTotalDinscrit()
     $nombreTotalInscritQuery = "SELECT COUNT(*) as total FROM candidat";
     $stmt = $db->prepare($nombreTotalInscritQuery);
     $stmt->execute();
-    return $stmt->fetchAll();
+    return $stmt->fetch();
 }
 
 // Nombre de candidats par nation

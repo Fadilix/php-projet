@@ -109,7 +109,6 @@
             <input type="radio" value="F" name="sexe" <?php if ($candidatData["sexe"] == "F") { ?> checked <?php } ?>>F
         </div>
 
-
         <div>
 
             <label for="nationalite">Nationalité :</label>

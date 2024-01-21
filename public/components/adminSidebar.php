@@ -31,7 +31,7 @@
 			height: 100%;
 			position: fixed;
 			width: 300px;
-			background: #FED057;
+			background: teal;
 			transition: 1000ms all cubic-bezier(0.19, 1, 0.22, 1);
 			transform: translateX(-100%);
 			left: 60px;
@@ -59,7 +59,7 @@
 
 		#blob-path {
 			height: 100%;
-			fill: #FED057;
+			fill: teal;
 		}
 
 		.hamburger {
