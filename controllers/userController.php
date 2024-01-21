@@ -1,5 +1,7 @@
 <?php
 include "C:/xampp/htdocs/projets php/php_p/php-projet/config/database.php";
+error_reporting(0);
+
 $msg = "";
 
 // Ajoute un nouvel utilisateur

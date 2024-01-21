@@ -47,7 +47,7 @@
                     <label for="">Mot de passe</label>
                     <input type="password" placeholder="Enter votre mot de passe" name="password" class="password">
                 </div>
-                <p class="msg">
+                <p class="msg" style="color: red">
                     <?php echo $msg; ?>
                 </p>
                 <div class="button-wrapper">
