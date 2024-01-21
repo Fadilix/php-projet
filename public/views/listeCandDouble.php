@@ -9,9 +9,10 @@
 <?php
 
 include "C:/xampp/htdocs/projets php/php_p/php-projet/controllers/candidatController.php";
-include "../../controllers/userController.php";
 
-$candidats = listCandidatsInscritParSexe();
+session_start();
+
+$candidats = listCandidatsInscritDouble();
 
 ?>
 

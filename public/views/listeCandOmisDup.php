@@ -11,7 +11,7 @@
 include "C:/xampp/htdocs/projets php/php_p/php-projet/controllers/candidatController.php";
 include "../../controllers/userController.php";
 
-$candidats = listCandidatsInscritParSexe();
+$candidats = listeCandOmisDupload();
 
 ?>
 
@@ -33,8 +33,8 @@ $candidats = listCandidatsInscritParSexe();
     <?php
     foreach ($candidats as $candidat) { 
         $username = getUsernameById($candidat["id_user"]);
+        
         ?>
-
             <tr>
                 <td data-cell="Nom"><?php echo $candidat['nom']; ?></td>
                 <td data-cell="Prenom"><?php echo $candidat['prenom']; ?></td>

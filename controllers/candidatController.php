@@ -159,10 +159,10 @@ function updateCandidat(
 function listCandidatsInscritParSexe()
 {
     global $db;
-    $candidatesPerSexQuery = "SELECT *, COUNT(*) as total FROM candidat GROUP BY sexe";
+    $candidatesPerSexQuery = "SELECT * FROM candidat GROUP BY sexe";
     $stmt = $db->prepare($candidatesPerSexQuery);
     $stmt->execute();
-    return $stmt->fetch();
+    return $stmt->fetchAll();
 }
 
 function listCandidatsParNation(){
@@ -170,7 +170,7 @@ function listCandidatsParNation(){
     $candidatParNation = "SELECT *, COUNT(*) as total FROM candidat GROUP BY nationalite";
     $stmt = $db->prepare($candidatParNation);
     $stmt->execute();
-    return $stmt->fetch();
+    return $stmt->fetchAll();
 }
 
 function listCandidatsInscritDouble(){
@@ -178,7 +178,7 @@ function listCandidatsInscritDouble(){
     $candidatInscritDoubleQuery = "SELECT *, COUNT(*) as occurrences FROM candidat GROUP BY nom, prenom HAVING occurrences > 1";
     $stmt = $db->prepare($candidatInscritDoubleQuery);
     $stmt->execute();
-    return $stmt->fetch();
+    return $stmt->fetchAll();
 }
 
 function listeCandOmisDupload(){
@@ -186,7 +186,7 @@ function listeCandOmisDupload(){
     $omisDuploadQuery = "SELECT * FROM candidat WHERE copie_nais IS NULL OR copie_nation IS NULL OR copie_attes_bac2 IS NULL";
     $stmt = $db->prepare($omisDuploadQuery);
     $stmt->execute();
-    return $stmt->fetch();
+    return $stmt->fetchAll();
 }
 
 function nombreTotalDinscrit(){
@@ -194,7 +194,7 @@ function nombreTotalDinscrit(){
     $nombreTotalInscritQuery = "SELECT COUNT(*) as total FROM candidat";
     $stmt = $db->prepare($nombreTotalInscritQuery);
     $stmt->execute();
-    return $stmt->fetch();
+    return $stmt->fetchAll();
 }
 
 function nombreCandidNation(){
@@ -202,7 +202,7 @@ function nombreCandidNation(){
     $nbTotalNationQuery = "SELECT nationalite, COUNT(*) as total FROM candidat GROUP BY nationalite";
     $stmt = $db->prepare($nbTotalNationQuery);
     $stmt->execute();
-    return $stmt->fetch();
+    return $stmt->fetchAll();
 }
 
 function nombreCandParSerie(){
@@ -210,7 +210,7 @@ function nombreCandParSerie(){
     $nbCandParSerieQuery = "SELECT serie, COUNT(*) as total FROM candidat GROUP BY serie";
     $stmt = $db->prepare($nbCandParSerieQuery);
     $stmt->execute();
-    return $stmt->fetch();
+    return $stmt->fetchAll();
 }
 
 function nbCandParSexe(){
@@ -218,5 +218,5 @@ function nbCandParSexe(){
     $nbCandParSexeQuery = "SELECT sexe, COUNT(*) as total FROM candidat GROUP BY sexe";
     $stmt = $db->prepare($nbCandParSexeQuery);
     $stmt->execute();
-    return $stmt->fetch();
+    return $stmt->fetchAll();
 }

@@ -38,29 +38,26 @@ function logUser($username, $password)
 {
     global $db;
     global $msg;
-    $getUsernameQuery = "SELECT * FROM user WHERE username = ? AND password = ?";
-    $stmt = $db->prepare($getUsernameQuery);
-    $stmt->execute([$username, $password]);
+
+    $getUserQuery = "SELECT * FROM user WHERE username = ?";
+    $stmt = $db->prepare($getUserQuery);
+    $stmt->execute([$username]);
 
     $userData = $stmt->fetch();
     $msg = "";
 
-    if (isset($userData) && !empty($userData)) {
-        $msg = "connecté avec succès";
-
-        $getUserIdQuery = "SELECT id FROM user WHERE username = ?";
-        $stmt = $db->prepare($getUserIdQuery);
-        $stmt->execute([$username]);
-        $userId = $stmt->fetch()["id"];
+    if (isset($userData) && password_verify($password, $userData['password'])) {
+        $msg = "Connecté avec succès";
 
         session_start();
         $_SESSION["username"] = $username;
-        $_SESSION["id"] = $userId;
+        $_SESSION["id"] = $userData["id"];
         header("Location: home.php");
     } else {
-        $msg = "connection echoué, le mot de passe ou le nom d'utilisateur n'est pas correcte";
+        $msg = "Connexion échouée, le mot de passe ou le nom d'utilisateur n'est pas correct.";
     }
 }
+
 
 
 // Rechercher le username d'un utilisateur à partir de son id
