@@ -1,6 +1,7 @@
 <?php
 include "C:/xampp/htdocs/projets php/php_p/php-projet/config/database.php";
 
+// obtenir la date limite de depôt de candidature
 function getCandidDate()
 {
 
@@ -12,6 +13,8 @@ function getCandidDate()
 }
 
 
+
+// Obtenir la date du concours
 function getConcDate()
 {
     global $db;
@@ -21,6 +24,8 @@ function getConcDate()
     return $stmt->fetch();
 }
 
+
+// Modifier la date de depôt de candidature
 function modifyCandidDate($newDate)
 {
     global $db;
@@ -31,6 +36,8 @@ function modifyCandidDate($newDate)
     header("Location: admin.php");
 }
 
+
+// Modifier la date du concours
 function modifyConcDate($newConcDate)
 {
     global $db;

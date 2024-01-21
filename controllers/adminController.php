@@ -1,6 +1,7 @@
 <?php
 
 include "C:/xampp/htdocs/projets php/php_p/php-projet/config/database.php";
+// ajout d'un nouvel administrateur
 function addNewAdmin($username, $password)
 {
     global $db;
@@ -33,6 +34,7 @@ function addNewAdmin($username, $password)
 }
 
 
+// Connexion de l'administrateur
 function logAdmin($username, $password)
 {
     global $db;

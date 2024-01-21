@@ -2,6 +2,7 @@
 include "C:/xampp/htdocs/projets php/php_p/php-projet/config/database.php";
 $msg = "";
 
+// Ajoute un nouvel utilisateur
 function addNewUser($username, $password)
 {
     global $db;

@@ -111,7 +111,7 @@ function updateCandidat(
     $stmt->execute([$candidatId]);
     $candidatData = $stmt->fetch();
 
-    // Prepare the query
+    // préparation de la requête
     $updateCandidatQuery = "UPDATE candidat SET
                             nom = ?,
                             prenom = ?,
@@ -126,10 +126,10 @@ function updateCandidat(
                             copie_attes_bac2 = ?
                             WHERE id = ?";
 
-    // Bind parameters and execute the query
+    // préparation
     $stmt = $db->prepare($updateCandidatQuery);
 
-    // Create an array of parameters
+    // Création d'une array de paramètres
     $params = [
         $nom,
         $prenom,
@@ -145,7 +145,7 @@ function updateCandidat(
         $candidatId,
     ];
 
-    // Append the parameters to the execute function
+    // Exécution de la query
     $stmt->execute($params);
 
     if ($stmt) {
@@ -156,6 +156,7 @@ function updateCandidat(
 }
 
 
+// Liste des candidats inscrits pas sexe
 function listCandidatsInscritParSexe()
 {
     global $db;
@@ -165,6 +166,7 @@ function listCandidatsInscritParSexe()
     return $stmt->fetchAll();
 }
 
+// Liste des candidats inscrits par nation
 function listCandidatsParNation()
 {
     global $db;
@@ -174,6 +176,7 @@ function listCandidatsParNation()
     return $stmt->fetchAll();
 }
 
+// Liste des candidats inscrits doublement
 function listCandidatsInscritDouble()
 {
     global $db;
@@ -183,6 +186,8 @@ function listCandidatsInscritDouble()
     return $stmt->fetchAll();
 }
 
+
+// Liste des candidats inscrits ayant omis d'uploader un document
 function listeCandOmisDupload()
 {
     global $db;
@@ -192,6 +197,7 @@ function listeCandOmisDupload()
     return $stmt->fetchAll();
 }
 
+// Nombre total d'inscrits 
 function nombreTotalDinscrit()
 {
     global $db;
@@ -201,6 +207,7 @@ function nombreTotalDinscrit()
     return $stmt->fetchAll();
 }
 
+// Nombre de candidats par nation
 function nombreCandidNation()
 {
     global $db;
@@ -210,6 +217,7 @@ function nombreCandidNation()
     return $stmt->fetchAll();
 }
 
+// Nombre de candidats par serie
 function nombreCandParSerie()
 {
     global $db;
@@ -219,6 +227,7 @@ function nombreCandParSerie()
     return $stmt->fetchAll();
 }
 
+// Nombre de candidats par sexe
 function nbCandParSexe()
 {
     global $db;

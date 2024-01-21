@@ -17,10 +17,7 @@ username.addEventListener("keyup", () => {
     if (!motifRegex.test(username.value) || username.value === "") {
         submit.disabled = true;
     }
-
-
 })
-
 
 password.addEventListener("keyup", () => {
     if (password.value.length < 8) {

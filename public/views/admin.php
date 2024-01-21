@@ -19,6 +19,7 @@
     $query = "SELECT * FROM candidat";
     $stmt = $db->query($query);
     ?>
+
     <div class="sidebar">
         <?php include "../components/adminSidebar.php" ?>
     </div>
