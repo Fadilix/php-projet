@@ -7,10 +7,7 @@
     <title>Liste de tous les étudiants</title>
     <link rel="stylesheet" href="../css/table.css">
     <style>
-        body {
-            display: flex;
-            margin: 0;
-        }
+
     </style>
 </head>
 
@@ -25,13 +22,13 @@
     <div class="sidebar">
         <?php include "../components/adminSidebar.php" ?>
     </div>
-    
+
     <div class="table-container">
         <?php if ($stmt) { ?>
             <table>
                 <div style="display: flex; align-items:center; gap: 10px;">
-                     <p>Date du concours : <?php echo getConcDate()["date_conc"]; ?> </p>
-                     
+                    <p>Date du concours : <?php echo getConcDate()["date_conc"]; ?> </p>
+
                     <form action="dateCandid.php">
                         <button type="submit" name="dateCandid">Modifier</button>
                     </form>

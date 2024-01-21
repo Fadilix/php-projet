@@ -68,11 +68,24 @@ function getRegistrationStatisticsByNationality()
         #chart_container {
             flex: 1;
             padding: 20px;
+            margin-top: -60px;
         }
 
         #chart_div {
-            width: 100%;
-            height: 400px;
+            margin-left: 20px;
+            width: 90%;
+            height: 700px;
+        }
+
+        
+        @media screen and (min-width: 768px) {
+            #sidebar {
+                flex-basis: 300px;
+            }
+
+            #chart_container {
+                flex-basis: calc(100% - 300px);
+            }
         }
     </style>
 </head>

@@ -6,10 +6,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/table.css">
     <style>
-
-        .sidebar{
-            width: 200px;
+   body {
+            display: flex;
+            margin: 0;
         }
+
     </style>
 </head>
 <body>
