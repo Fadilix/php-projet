@@ -63,8 +63,10 @@
             </tr>
 
             <?php
+
             foreach ($candidats as $candidat) {
                 $username = getUsernameById($candidat["id_user"]);
+            
             ?>
 
                 <tr>

@@ -28,6 +28,7 @@
     }
 
     ?>
+    
     <h1>Connexion <span>utilisateur</span></h1>
     <form action="" method="POST">
         <div class="image"></div>
