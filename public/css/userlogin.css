@@ -11,7 +11,7 @@
 
 h1 {
     margin-bottom: 20px;
-    animation: TopToBottomAnimation 5s
+    /* animation: TopToBottomAnimation 5s */
 }
 
 @keyframes TopToBottomAnimation {
@@ -101,11 +101,11 @@ h1 span {
 
 @keyframes InAndOutAnimation {
     0% {
-        scale: 0.5;
+        scale: 1;
     }
 
     50% {
-        scale: 1.5;
+        scale: 1.2;
     }
 
     100% {
