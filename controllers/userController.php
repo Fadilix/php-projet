@@ -21,6 +21,7 @@ function addNewUser($username, $password)
         return;
     }
 
+
     // si le username n'est pas dans la base alors on l'ajoute
     if (strlen($password) >= 8) {
         $msg = "";

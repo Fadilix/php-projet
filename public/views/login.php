@@ -21,9 +21,12 @@
         $username = $_POST["username"];
         $password = $_POST["password"];
         $submit = $_POST["submit"];
+        $msg = "";
 
         if (isset($username) && isset($password) && !empty($username) && !empty($password) && isset($submit)) {
             logUser($username, $password);
+        } else {
+            $msg = "Veuillez remplir tous les champs";
         }
     }
 

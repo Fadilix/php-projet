@@ -8,23 +8,45 @@
     <link rel="stylesheet" href="../../public/css/index.css">
 </head>
 
+<style>
+    .contest-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+
+    .title {
+        width: 800px;
+        text-align: center;
+    }
+</style>
+
 <body>
 
     <?php
-    $contestTitle = "Bienvenue sur notre Plateforme de Concours";
-    $contestDescription = "Cette plateforme héberge des concours passionnants où vous pouvez mettre en valeur vos compétences et talents.";
+    $contestTitle = "Bienvenue sur notre plateforme d'inscription au concours d'entrée d'IAI-TOGO";
+    $contestDescription = "Transformez votre passion en expertise numérique avec l'École Informatique IAI Togo – Où l'innovation devient une réalité, et vos rêves informatiques prennent vie!";
 
     // include "../../public/components/navbar.php";
-
-    echo "<div class='contest-info'>";
-    echo "<h1>$contestTitle</h1>";
-    echo "<p>$contestDescription</p>";
-    echo "</div>";
     ?>
+    <?php include "../components/navbar.php" ?>
 
-    <div class="links">
-        <a href="inscription.php" class="inscription-button">Créer un compte</a>
-        <a href="login.php" class="connection-button">Se connecter</a>
+    <div class="informations">
+
+        <div class='contest-info'>
+            <h1 class="title"><?php echo $contestTitle; ?></h1>
+            <p class="title"><?php echo $contestDescription; ?></p>
+        </div>
+
+        <div class="links">
+            <a href="inscription.php" class="inscription-button">Créer un compte</a>
+            <a href="login.php" class="connection-button">Se connecter</a>
+        </div>
+    </div>
+    <div style="height: 200vh;" class="formations">
+        <h1>Nos formations</h1>
     </div>
 
 </body>

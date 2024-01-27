@@ -18,16 +18,19 @@
 
         $username = $_POST["username"];
         $password = $_POST["password"];
+        $msg = "";
 
         if (isset($username) && isset($password) && !empty($username) && !empty($password)) {
             addNewUser($username, $password);
+        } else {
+            $msg = "Veuillez remplir tous les champs";
         }
     }
 
     ?>
 
-    
-<h1>Inscription <span>utilisateur</span></h1>
+
+    <h1>Inscription <span>utilisateur</span></h1>
     <form action="" method="POST">
         <div class="image"></div>
         <div class="form">
@@ -41,7 +44,7 @@
                     <label for="">Nom d'utilisateur</label>
                     <input type="text" placeholder="Enter votre nom d'utilisateur" name="username">
                 </div>
-                
+
                 <div>
                     <label for="">Mot de passe</label>
                     <input type="password" placeholder="Enter votre mot de passe" name="password" class="password">
