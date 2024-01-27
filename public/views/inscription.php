@@ -29,6 +29,8 @@
 
     ?>
 
+    <?php include "../components/navbar.php"; ?>
+
 
     <h1>Inscription <span>utilisateur</span></h1>
     <form action="" method="POST">

@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="../css/auth.css">
 </head>
 
+<style>
+    a, button {
+        color: black;
+    }
+</style>
+
 <body>
 
     <?php
@@ -31,6 +37,8 @@
     }
 
     ?>
+    <?php include "../components/navbar.php"; ?>
+
 
     <h1>Connexion <span>utilisateur</span></h1>
     <form action="" method="POST">
