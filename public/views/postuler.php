@@ -81,35 +81,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <body>
+    <?php include "../components/candidateNav.php" ?>
     <main>
 
         <h2>Formulaire d'inscription</h2>
         <form action="" method="post" enctype="multipart/form-data">
-            <div>
-
+            <div class="row">
                 <label for="nom">Nom :</label>
                 <input type="text" name="nom" required><br>
             </div>
 
-            <div>
+            <div class="row">
 
                 <label for="prenom">Prénom :</label>
                 <input type="text" name="prenom" required><br>
             </div>
 
 
-            <div>
+            <div class="row">
 
                 <label for="photo">Photo :</label>
                 <input type="file" name="photo" accept="image/jpeg, image/png, image/bmp, image/webp" required><br>
             </div>
 
-            <div>
+            <div class="row">
                 <label for="date_naissance">Date de naissance :</label>
                 <input type="date" name="date_naiss" min="1990-01-01" required><br>
             </div>
 
-            <div>
+            <div class="row">
 
                 <label for="sexe">Sexe (M ou F) :</label>
                 <input type="radio" value="M" name="sexe">M
@@ -117,18 +117,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
 
-            <div>
+            <div class="row">
 
                 <label for="nationalite">Nationalité :</label>
                 <select name="nationalite" id="" class="nationalite" required></select>
             </div>
 
-            <div>
+            <div class="row">
                 <label for="annee_bac">Année d'obtention du BAC II :</label>
                 <select value="" class="menu_annee" name="annee_bac" required></select>
             </div>
 
-            <div>
+            <div class="row">
                 <label for="serie_bac">Série du BAC (C, D, E, F1 ou F2) :</label>
                 <select name="serie_bac" id="" required>
                     <option value="C" name="serie_bac">C</option>
@@ -140,24 +140,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
 
-            <div>
+            <div class="row">
                 <label for="copie_naissance">Copie de la naissance (PDF) :</label>
                 <input type="file" name="copie_naiss" accept=".pdf" required><br>
             </div>
 
-            <div>
+            <div class="row">
                 <label for="copie_nationalite">Copie de la nationalité (PDF) :</label>
                 <input type="file" name="copie_nation" accept=".pdf" required><br>
             </div>
 
 
-            <div>
+            <div class="row">
 
                 <label for="attestation_bac">Attestation du BAC II (PDF) :</label>
                 <input type="file" name="attest_bac" accept=".pdf" required><br>
             </div>
+            <div class="submit-container">
 
-            <input type="submit" value="Soumettre">
+                <input type="submit" value="Soumettre">
+            </div>
         </form>
 
     </main>

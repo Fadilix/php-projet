@@ -46,7 +46,7 @@
             transition: .3s all ease;
             font-size: 20px;
 
-            &:hover{
+            &:hover {
                 scale: 1.08;
             }
         }
@@ -55,7 +55,7 @@
 
 <body>
     <?php
-
+    
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $submit = $_POST["submit"];
 
@@ -65,6 +65,17 @@
         }
     }
 
+    if (isset($_SESSION["username"])) {
+        $username = $_SESSION['username'];
+    } else {
+        $username = "no username";
+    }
+
+    if (isset($_SESSION["id"])) {
+        $userId = $_SESSION['id'];
+    } else {
+        $userId = -1;
+    }
     ?>
     <div class="responsive-bar">
         <div class="logo">

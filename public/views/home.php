@@ -14,17 +14,7 @@
     session_start();
 
 
-    if (isset($_SESSION["username"])) {
-        $username = $_SESSION['username'];
-    } else {
-        $username = "no username";
-    }
 
-    if (isset($_SESSION["id"])) {
-        $userId = $_SESSION['id'];
-    } else {
-        $userId = -1;
-    }
     ?>
 
 
