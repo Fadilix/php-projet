@@ -37,7 +37,7 @@
     }
 
     ?>
-    <?php include "../components/navbar.php"; ?>
+    <?php include "../components/authNavbar.php"; ?>
 
 
     <h1>Connexion <span>utilisateur</span></h1>

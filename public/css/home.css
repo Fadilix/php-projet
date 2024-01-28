@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+}
+
+body {
+    background: url("../images/campus.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+}
+
+a,
+button {
+    /* color: black; */
+    text-align: center;
+}
+
+.main {
+    background-color: rgba(255, 255, 255, 255, 0.5);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.post-const {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.post-const a {
+    all: unset;
+}
+
+.post-const button {
+    all: unset;
+    cursor: pointer;
+    transition: .3s all ease;
+
+    width: 150px;
+    border: 1px solid teal;
+    padding: 12px;
+    margin-top: 30px;
+    font-weight: bold;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        transition: .3s all ease;
+        z-index: -1;
+        background-color: teal;
+        border-radius: 8px;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+
+    &:hover {
+        box-shadow: 0 0 15px black;
+    }
+
+}
+
+.post-const p {
+    text-shadow: 0 0 5px black;
+}
+
+button a{
+    width: 100%;
+}

@@ -29,7 +29,7 @@
 
     ?>
 
-    <?php include "../components/navbar.php"; ?>
+    <?php include "../components/authNavbar.php"; ?>
 
 
     <h1>Inscription <span>utilisateur</span></h1>

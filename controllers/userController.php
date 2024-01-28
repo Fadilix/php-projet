@@ -29,7 +29,7 @@ function addNewUser($username, $password)
         $addNewUserQuery = "INSERT INTO user (username, password) VALUES (?, ?)";
         $stmt = $db->prepare($addNewUserQuery);
         $stmt->execute([$username, $hashedPassword]);
-        header("Location: index.php");
+        header("Location: login.php");
         exit;
     } else {
         $msg = "Le mot de passe doit contenir au moins 8 caractères";
