@@ -12,12 +12,7 @@
     <?php
     include "../../controllers/candidatController.php";
     session_start();
-
-
-
     ?>
-
-
 
     <?php include "../components/candidateNav.php" ?>
     <div class="main">

@@ -58,7 +58,6 @@
             <?php
             foreach ($candidats as $candidat) {
                 $username = getUsernameById($candidat["id_user"]);
-
             ?>
                 <tr>
                     <td data-cell="Nom"><?php echo $candidat['nom']; ?></td>

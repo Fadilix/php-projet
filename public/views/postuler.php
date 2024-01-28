@@ -116,7 +116,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="radio" value="F" name="sexe">F
             </div>
 
-
             <div class="row">
 
                 <label for="nationalite">Nationalité :</label>
@@ -139,7 +138,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </select>
             </div>
 
-
             <div class="row">
                 <label for="copie_naissance">Copie de la naissance (PDF) :</label>
                 <input type="file" name="copie_naiss" accept=".pdf" required><br>
@@ -150,23 +148,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="file" name="copie_nation" accept=".pdf" required><br>
             </div>
 
-
             <div class="row">
 
                 <label for="attestation_bac">Attestation du BAC II (PDF) :</label>
                 <input type="file" name="attest_bac" accept=".pdf" required><br>
             </div>
+
             <div class="submit-container">
 
                 <input type="submit" value="Soumettre">
             </div>
         </form>
-
     </main>
 
     <script src="../js/postuler.js"></script>
     <script src="../js/fetchCountriesApi.js"></script>
 
 </body>
-
 </html>

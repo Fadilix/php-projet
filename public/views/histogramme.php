@@ -110,6 +110,7 @@ function getRegistrationStatisticsByNationality()
 </head>
 
 <?php include "../../controllers/candidatController.php" ?>
+
 <body>
     <div id="sidebar">
         <?php include "../components/adminSidebar.php" ?>
@@ -117,7 +118,7 @@ function getRegistrationStatisticsByNationality()
     <div id="chart_container">
         <div id="chart_div"></div>
     </div>
-<!-- 
+    <!-- 
     <div class="informations">
         <p>Nombre total de candidats inscrits : <?php echo nombreTotalDinscrit()["total"]; ?></p>
     </div> -->

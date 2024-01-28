@@ -9,7 +9,8 @@
 </head>
 
 <style>
-    a, button {
+    a,
+    button {
         color: black;
     }
 </style>
@@ -17,10 +18,8 @@
 <body>
 
     <?php
-
     include "../../config/database.php";
     include "../../controllers/userController.php";
-
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -38,7 +37,6 @@
 
     ?>
     <?php include "../components/authNavbar.php"; ?>
-
 
     <h1>Connexion <span>utilisateur</span></h1>
     <form action="" method="POST">

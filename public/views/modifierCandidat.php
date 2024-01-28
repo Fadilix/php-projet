@@ -103,7 +103,6 @@
         </div>
 
         <div>
-
             <label for="sexe">Sexe (M ou F) :</label>
             <input type="radio" value="M" name="sexe" <?php if ($candidatData["sexe"] == "M") { ?> checked <?php } ?>>M
             <input type="radio" value="F" name="sexe" <?php if ($candidatData["sexe"] == "F") { ?> checked <?php } ?>>F
