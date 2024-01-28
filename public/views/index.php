@@ -33,9 +33,47 @@
     // include "../../public/components/navbar.php";
     ?>
     <?php include "../components/navbar.php" ?>
-    <div class="informations-container">
+    <?php include "../../controllers/datesController.php"; ?>
+    <div class="informations-container" id="home">
         <div class="informations">
+
+            <script>
+                <?php $candidDate = getCandidDate(); ?>
+                // Get the PHP value and create a JavaScript Date object
+                var candidDate = new Date("<?php echo $candidDate['date_lim_dep']; ?>");
+
+                // Update the countdown every second
+                var countdownInterval = setInterval(updateCountdown, 1000);
+
+                function updateCountdown() {
+                    var now = new Date();
+                    var timeDifference = candidDate - now;
+
+                    // Calculate days, hours, minutes, and seconds
+                    var days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+                    // Display the countdown
+                    document.getElementById("countdown").innerHTML = "Fin de dépôt de candidature dans : " +
+                        "<span>" +
+                        days + " jours " +
+                        hours + " heures " +
+                        minutes + " minutes " +
+                        seconds + " secondes" +
+                        "</span>";
+
+                    // If the countdown is over, stop updating
+                    if (timeDifference <= 0) {
+                        clearInterval(countdownInterval);
+                        document.getElementById("countdown").innerHTML = "Le délai de dépôt de candidature est expiré.";
+                    }
+                }
+            </script>
             <div class='contest-info'>
+                <h4 id="countdown">Fin de dépôt de candidature dans : Loading...</h4>
+
                 <h1 class="title"><?php echo $contestTitle; ?></h1>
                 <p class="title"><?php echo $contestDescription; ?></p>
             </div>
@@ -46,7 +84,7 @@
             </div>
         </div>
     </div>
-    <div class="formations">
+    <div class="formations" id="formations">
         <h1 data-aos="fade-up" class="nos-formations">Nos formations</h1>
         <div class="parcourss">
 
@@ -74,33 +112,71 @@
 
     </div>
 
-    <div class="choice-of-iai">
-        <h1>Pourquoi nous choisir</h1>
-        <div class="reasons">
-            <div class="reason ex-acad">
-                <h2>Excellence académique</h2>
-                <p>Son équipe pédagogique est composée des enseignants expérimentés universitaires et des professionnels de l’informatique, d’un staff d’encadrement rigoureux et professionnel. Son programme de formation est régulièrement visité et mis à jour .</p>
+    <div class="choice-of-iai" id="choice">
+        <h1 data-aos="fade-up">Pourquoi nous choisir ?</h1>
+        <div class="left-and-right">
+
+            <div class="left" data-aos="fade-right">
+                <img src="../images/cs_class.jpg" alt="">
             </div>
+            <div class="reasons">
+                <div class="reason ex-acad" data-aos="fade-in">
+                    <div class="tick">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                        </svg>
+
+                        <h2> Excellence académique</h2>
+                    </div>
+                    <p>Son équipe pédagogique est composée des enseignants expérimentés universitaires et des professionnels de l’informatique, d’un staff d’encadrement rigoureux et professionnel. Son programme de formation est régulièrement visité et mis à jour .</p>
+                </div>
 
 
-            <div class="reason stages">
-                <h2>Projets et Stages Académiques</h2>
-                <p>Après le volet des apprentissages dans des salles pour des cours théoriques & pratiques, les étudiants sont invités à l’insertion professionnelle dans des entreprises, des cabinets informatiques et autres structures tant publiques que privés pour y effectuer des stages au semestres 4 et 6.</p>
-            </div>
+                <div class="reason stages" data-aos="fade-in">
+                    <div class="tick">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                        </svg>
 
-            <div class="reason equip">
-                <h2>Infrastructures et équipements de pointe
-                </h2>
-                <p>Son équipe pédagogique est composée des enseignants expérimentés universitaires et des professionnels de l’informatique, d’un staff d’encadrement rigoureux et professionnel. Son programme de formation est régulièrement visité et mis à jour .</p>
-            </div>
+                        <h2>Projets et Stages Académiques</h2>
+                    </div>
+                    <p>Après le volet des apprentissages dans des salles pour des cours théoriques & pratiques, les étudiants sont invités à l’insertion professionnelle dans des entreprises, des cabinets informatiques et autres structures tant publiques que privés pour y effectuer des stages au semestres 4 et 6.</p>
+                </div>
 
-            <div class="reason diplomes">
-                <h2>Suivi des diplômés</h2>
-                <p>Le réseau d’allumis de l’IAI-TOGO se compose essentiellement des diplômés éparpillés sur la planète (Inde, Chine, France, Canada, Etats-Unis, Bénin, Côte d’Ivoire, Burkina-Faso, Îles de Madagascar, …).</p>
+                <div class="reason equip" data-aos="fade-in">
+                    <div class="tick">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                        </svg>
+
+                        <h2>Infrastructures et équipements de pointe
+                    </div>
+                    </h2>
+                    <p>Son équipe pédagogique est composée des enseignants expérimentés universitaires et des professionnels de l’informatique, d’un staff d’encadrement rigoureux et professionnel. Son programme de formation est régulièrement visité et mis à jour .</p>
+                </div>
+
+                <div class="reason diplomes" data-aos="fade-in">
+                    <div class="tick">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                        </svg>
+
+                        <h2>Suivi des diplômés</h2>
+                    </div>
+                    <p>Le réseau d’allumis de l’IAI-TOGO se compose essentiellement des diplômés éparpillés sur la planète (Inde, Chine, France, Canada, Etats-Unis, Bénin, Côte d’Ivoire, Burkina-Faso, Îles de Madagascar, …).</p>
+                </div>
             </div>
         </div>
     </div>
 
+    <div class="graduation" data-aos="fade-right">
+        <h1 data-aos="fade-right" data-aos-easing="ease-out-cubic" data-aos-duration="4000">L'excellence à IAI-TOGO</h1>
+    </div>
+
+
+    <div data-aos="slide-up" id="contact-us">
+        <?php include "../components/footer.php" ?>
+    </div>
     <script src="../js/index.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
