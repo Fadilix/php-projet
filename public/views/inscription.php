@@ -20,7 +20,7 @@
         $password = $_POST["password"];
         $msg = "";
 
-        if (isset($username) && isset($password) && !empty($username) && !empty($password)) {
+        if (isset($username) || strpos($username, " ") !== false && isset($password) && !empty($username) && !empty($password)) {
             addNewUser($username, $password);
         } else {
             $msg = "Veuillez remplir tous les champs";

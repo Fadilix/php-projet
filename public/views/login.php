@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/authLogin.css">
 </head>
 
 <style>
@@ -47,7 +47,6 @@
                 <p>Veuillez remplir tous les champs</p>
             </div>
             <div class="real-form">
-
                 <div>
                     <label for="">Nom d'utilisateur</label>
                     <input type="text" placeholder="Enter votre nom d'utilisateur" name="username">

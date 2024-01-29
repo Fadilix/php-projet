@@ -73,6 +73,7 @@ function addNewCandidat(
 
     $stmt->execute($values);
     echo "Candidat inscrit avec succès";
+    header("Location: home.php");
 }
 
 
