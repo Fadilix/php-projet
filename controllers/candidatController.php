@@ -239,10 +239,13 @@ function nbCandParSexe()
 }
 
 
-function supprimerCandid(){
+function supprimerCandid($id)
+{
     global $db;
     $deleteCanddiatureQuery = "DELETE FROM candidat WHERE id = ?";
     $stmt = $db->prepare($deleteCanddiatureQuery);
-    $stmt->execute();
-    return $stmt->fetchAll();
+    $stmt->execute([$id]);
+    echo "candidat supprimé avec succès";
+
+    header("Location: home.php");
 }
