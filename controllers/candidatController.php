@@ -237,3 +237,12 @@ function nbCandParSexe()
     $stmt->execute();
     return $stmt->fetchAll();
 }
+
+
+function supprimerCandid(){
+    global $db;
+    $deleteCanddiatureQuery = "DELETE FROM candidat WHERE id = ?";
+    $stmt = $db->prepare($deleteCanddiatureQuery);
+    $stmt->execute();
+    return $stmt->fetchAll();
+}

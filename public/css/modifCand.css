@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url("../images/grad_hats.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100vw;
+    overflow-x: hidden;
+
+    &::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+}
+
+
+main {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+main label {
+    display: block;
+}
+
+input,
+select,
+option {
+    margin-bottom: 10px;
+    color: black;
+}
+
+input[type="text"],
+input[type="password"] {
+    color: black;
+    all: unset;
+    width: 100%;
+    height: 30px;
+    border: 1px solid #ccc;
+    padding-inline: 10px;
+    border-radius: 8px;
+    border: 1px solid teal;
+
+}
+
+main .form {
+    border: 1px solid teal;
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.submit-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row {
+    margin-bottom: 15px;
+}
+
+label{
+    margin-bottom: 3px;
+}
+input[type="submit"] {
+    all: unset;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: .3s all ease;
+
+    width: 150px;
+    border: 1px solid teal;
+    padding: 12px;
+    margin-top: 30px;
+    font-weight: bold;
+    border-radius: 8px;
+
+
+    &:hover {
+        box-shadow: 0 0 15px white;
+    }
+}
+
+input[type="file"] {
+    border: 2px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    cursor: pointer;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    cursor: pointer;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ccc;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: black;
+}
+
+input[type="date"]:hover {
+    background-color: #eee;
+}
+
+input[type="date"]:focus {
+    outline: none;
+    border-color: #c0392b;
+    box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+}
+
+label{
+    font-weight: bold;
+    /* color: teal; */
+}
+
+/* label, input[type="password"]{
+    color: white;
+} */
