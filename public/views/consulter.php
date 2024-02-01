@@ -97,9 +97,9 @@
                 <td data-cell="Nationalité"><?php echo $candidatData['nationalite']; ?></td>
                 <td data-cell="Année d'obtention de BAC II"><?php echo $candidatData['annee_bac2']; ?></td>
                 <td data-cell="Serie"><?php echo $candidatData['serie']; ?></td>
-                <td data-cell="Copie de naissance"><a href="../../uploads/<?php echo $username; ?>/copie_naiss/<?php echo $candidatData['copie_nais']; ?>" download>Télécharger</a></td>
-                <td data-cell="Copie de nationalité"><a href='../../uploads/<?php echo $username; ?>/copie_nation/<?php echo $candidatData['copie_nation']; ?>' download>Télécharger</a></td>
-                <td data-cell="Copie de l'attestation de BAC II"><a href='../../uploads/<?php echo $username; ?>/attest_bac/<?php echo $candidatData['copie_attes_bac2']; ?>' download>Télécharger</a></td>
+                <td data-cell="Copie de naissance"><a target="_blank" href="../../uploads/<?php echo $username; ?>/copie_naiss/<?php echo $candidatData['copie_nais']; ?>">Voir</a></td>
+                <td data-cell="Copie de nationalité"><a target="_blank" href='../../uploads/<?php echo $username; ?>/copie_nation/<?php echo $candidatData['copie_nation']; ?>'>Voir</a></td>
+                <td data-cell="Copie de l'attestation de BAC II"><a target="_blank" href='../../uploads/<?php echo $username; ?>/attest_bac/<?php echo $candidatData['copie_attes_bac2']; ?>'>Voir</a></td>
                 <td data-cell="Modifier">
                     <form action="modifierCandidat.php?candidat_id=<?php echo $candidatData["id"]; ?>" method="POST">
                         <button type="submit" class="modif-button">Modifier</button>
