@@ -70,7 +70,7 @@
 
     <div class="table-container">
         <table border="1" width="100%">
-            <caption>Vos candidatures</caption>
+            <caption class="caption">Vos candidatures</caption>
             <tr>
                 <th>Nom</th>
                 <th>Prenom</th>
@@ -113,6 +113,11 @@
                             //     console.log(candidatureDate);
                             // })
                             modifButton.disabled = (diffDate < 0);
+
+
+                            // for the caption right here 
+                            const caption = document.querySelector('.caption');
+                            diffDate < 0 ? caption.innerHTML = "Vos candidatures " + " (Vous ne pouvez plus modifier)" : "Vos candidatures";
                         </script>
                     </form>
                 </td>
