@@ -151,6 +151,7 @@ function updateCandidat(
 
     if ($stmt) {
         echo "Mise à jour réussie.";
+        header("Location: consulter.php");
     } else {
         echo "Erreur lors de la mise à jour : ";
     }

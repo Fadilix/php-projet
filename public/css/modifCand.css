@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+}
+
+h1 {
+    margin-bottom: 20px;
 }
 
 body {
@@ -40,6 +48,11 @@ main label {
     display: block;
 }
 
+label {
+    font-weight: bold;
+    font-size: 18px;
+}
+
 input,
 select,
 option {
@@ -64,6 +77,8 @@ main .form {
     border: 1px solid teal;
     padding: 40px;
     border-radius: 8px;
+    backdrop-filter: blur(25px);
+    width: 500px;
 }
 
 .submit-container {
@@ -77,9 +92,10 @@ main .form {
     margin-bottom: 15px;
 }
 
-label{
+label {
     margin-bottom: 3px;
 }
+
 input[type="submit"] {
     all: unset;
     cursor: pointer;
@@ -150,7 +166,7 @@ input[type="date"]:focus {
     box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
 }
 
-label{
+label {
     font-weight: bold;
     /* color: teal; */
 }

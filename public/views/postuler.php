@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php include "../components/candidateNav.php" ?>
     <main>
 
-        <h2>Formulaire d'inscription</h2>
+        <h1>Formulaire d'inscription</h1>
         <form action="" method="post" enctype="multipart/form-data">
             <div class="row">
                 <label for="nom">Nom :</label>
@@ -140,18 +140,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <div class="row">
                 <label for="copie_naissance">Copie de la naissance (PDF) :</label>
-                <input type="file" name="copie_naiss" accept=".pdf" required><br>
+                <input type="file" name="copie_naiss" accept=".pdf"><br>
             </div>
 
             <div class="row">
                 <label for="copie_nationalite">Copie de la nationalité (PDF) :</label>
-                <input type="file" name="copie_nation" accept=".pdf" required><br>
+                <input type="file" name="copie_nation" accept=".pdf"><br>
             </div>
 
             <div class="row">
 
                 <label for="attestation_bac">Attestation du BAC II (PDF) :</label>
-                <input type="file" name="attest_bac" accept=".pdf" required><br>
+                <input type="file" name="attest_bac" accept=".pdf"><br>
             </div>
 
             <div class="submit-container">
@@ -165,4 +165,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="../js/fetchCountriesApi.js"></script>
 
 </body>
+
 </html>

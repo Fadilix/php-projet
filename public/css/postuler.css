@@ -1,7 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+
+}
+
+h1 {
+    margin-bottom: 20px;
 }
 
 body {
@@ -39,6 +48,11 @@ main {
 main label {
     display: block;
 }
+label{
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
 
 input,
 select,
@@ -62,9 +76,11 @@ input[type="password"] {
 
 main form {
     border: 1px solid teal;
-    padding: 40px;
+    padding: 50px;
     border-radius: 8px;
+    backdrop-filter: blur(25px);
 }
+
 
 .submit-container {
     width: 100%;

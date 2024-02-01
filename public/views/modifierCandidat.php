@@ -165,7 +165,9 @@
                 <span>Copie attestation BAC II actuelle: <?php echo $candidatData['copie_attes_bac2']; ?></span><br>
             </div>
 
-            <input type="submit" value="Soumettre" name="submit">
+            <div class="submit-container">
+                <input type="submit" value="Soumettre" name="submit">
+            </div>
         </form>
     </main>
 
