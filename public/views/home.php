@@ -11,6 +11,7 @@
 <body>
     <?php
     include "../../controllers/candidatController.php";
+    include "../../controllers/datesController.php";
     session_start();
     ?>
 
@@ -27,8 +28,19 @@
             </div>
         <?php } else { ?>
             <div class="post-const">
-                <p>Cliquez sur le bouton ci-dessous pour postuler au concours</p>
-                <button>
+                <?php
+                $dateCandidature = new DateTime(getCandidDate()["date_lim_dep"]);
+                $now = new DateTime();
+
+                $interval = $dateCandidature->diff($now);
+
+                // différence entre les dates
+                $canPostulate = $interval->invert > 0;
+                // echo $canPostulate ? "you can" : "you cannot";
+                ?>
+
+                <p><?php echo $canPostulate ? "Cliquez sur le bouton ci-dessous pour postuler au concours" : "La date de dépôt de candidature est expiré, vous ne pouvez plus postuler"?></p>
+                <button style="z-index: <?php echo $canPostulate ? "" : "-2" ?>">
                     <a href="postuler.php">Postuler concours</a>
                 </button>
             </div>

@@ -18,8 +18,6 @@ body {
     min-height: 100vh;
     width: 100vw;
     overflow-x: hidden;
-
-
 }
 
 .informations {
@@ -145,11 +143,10 @@ h1 {
     z-index: 10;
     transition: .3s;
 
-    &:hover{
+    &:hover {
         transform: translateY(-5px)
     }
 }
-
 
 .parcours p {
     color: white;
@@ -162,14 +159,17 @@ h1 {
 
 .glsi {
     background: url("../images/glsi.avif");
+
 }
 
 .asr {
     background: url("../images/asr.png");
+
 }
 
 .mtwi {
-    background: url("../images/mtwi.webp")
+    background: url("../images/mtwi.webp");
+
 }
 
 .nos-formations {
