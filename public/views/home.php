@@ -15,6 +15,16 @@
     session_start();
     ?>
 
+
+    <?php 
+    
+    // can only access this page if he's is logged in
+    if((string) $_SESSION["id"] == "0"){
+        header("Location: login.php");
+    }
+    ?>
+
+
     <?php include "../components/candidateNav.php" ?>
     <div class="main">
 

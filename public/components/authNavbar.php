@@ -34,6 +34,7 @@
             <img src="../images/custom_iai_logo.png" alt="logo" />
         </div>
         <ul>
+            <li><a href="index.php">Home</a></li>
             <li><a href="login.php">Se connecter</a></li>
             <li><a href="inscription.php">Créer un compte</a></li>
         </ul>

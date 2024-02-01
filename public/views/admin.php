@@ -18,6 +18,12 @@
     include "../../controllers/datesController.php";
     $query = "SELECT * FROM candidat";
     $stmt = $db->query($query);
+
+    session_start();
+    $adminId = $_SESSION["admin_id"];
+    if ((string) $adminId === "0") {
+        header("Location: adminConnexion.php");
+    }
     ?>
 
     <div class="sidebar">

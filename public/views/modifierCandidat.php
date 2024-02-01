@@ -16,6 +16,12 @@
     include "../../config/database.php";
 
 
+    // can only access this page if he's is logged in
+    if ((string) $_SESSION["id"] == "0") {
+        header("Location: login.php");
+    }
+
+
     $candidatId = (int) $_GET["candidat_id"];
     $getCandidatQuery = "SELECT * FROM candidat WHERE id = ?";
 

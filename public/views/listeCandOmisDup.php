@@ -15,7 +15,13 @@
     include "C:/xampp/htdocs/projets php/php_p/php-projet/controllers/candidatController.php";
     include "../../controllers/userController.php";
     include "../../controllers/datesController.php";
+    session_start();
 
+    $adminId = $_SESSION["admin_id"];
+    if ((string) $adminId === "0") {
+        header("Location: adminConnexion.php");
+    }
+    
     $candidats = listeCandOmisDupload();
 
     ?>

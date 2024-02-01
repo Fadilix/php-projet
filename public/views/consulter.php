@@ -28,7 +28,9 @@
         margin-top: 100px;
     }
 
-    tr, td, th {
+    tr,
+    td,
+    th {
         color: black;
     }
 </style>
@@ -36,10 +38,19 @@
 <body>
 
     <?php
+    session_start();
+
+    // can only access this page if he's is logged in
+    if ((string) $_SESSION["id"] == "0") {
+        header("Location: login.php");
+    }
+    ?>
+
+    <?php
 
     include "../../controllers/candidatController.php";
     include "../../controllers/userController.php";
-    session_start();
+    include "../../controllers/datesController.php";
     if (!isset($_SESSION["id"])) {
         echo "no id found";
         // header("Location: index.php");
@@ -91,7 +102,18 @@
                 <td data-cell="Copie de l'attestation de BAC II"><a href='../../uploads/<?php echo $username; ?>/attest_bac/<?php echo $candidatData['copie_attes_bac2']; ?>' download>Télécharger</a></td>
                 <td data-cell="Modifier">
                     <form action="modifierCandidat.php?candidat_id=<?php echo $candidatData["id"]; ?>" method="POST">
-                        <button type="submit">Modifier</button>
+                        <button type="submit" class="modif-button">Modifier</button>
+                        <script>
+                            const modifButton = document.querySelector(".modif-button");
+                            const currentDate = new Date();
+                            const candidatureDate = new Date("<?php echo getCandidDate()['date_lim_dep']; ?>");
+                            const diffDate = candidatureDate - currentDate;
+                            // window.addEventListener("DOMContentLoaded", () => {
+                            //     console.log(diffDate);
+                            //     console.log(candidatureDate);
+                            // })
+                            modifButton.disabled = (diffDate < 0);
+                        </script>
                     </form>
                 </td>
 

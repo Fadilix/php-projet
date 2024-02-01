@@ -140,6 +140,18 @@
 				<li><a class="a" href="listeCandDouble.php">Candidats inscrits doublement</a></li>
 				<li><a class="a" href="listeCandOmisDup.php">Candidats ayant omis d'uploader un document</a></li>
 				<li><a class="a" href="histogramme.php">Histogramme étudiants par nationalité</a></li>
+				<li>
+					<form action="" method="post">
+						<button name="deco" style="all:unset; cursor:pointer;" type="submit">Deconnexion</button>
+					</form>
+				</li>
+
+				<?php
+				if (isset($_POST["deco"])) {
+					$_SESSION["admin_id"] = "0";
+					header("Location: adminConnection.php");
+				}
+				?>
 			</ul>
 		</div>
 		<svg version="1.1" id="blob" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

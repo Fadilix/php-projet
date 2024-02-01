@@ -60,7 +60,7 @@
         $submit = $_POST["submit"];
 
         if (isset($submit)) {
-            session_destroy();
+            $_SESSION["id"] = "0";
             header("Location: index.php");
         }
     }

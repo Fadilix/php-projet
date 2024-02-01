@@ -48,10 +48,8 @@ function logAdmin($username, $password)
     if ($adminData && password_verify($password, $adminData['password'])) {
         $msg = "Connecté avec succès";
 
-        $getUserIdQuery = "SELECT id FROM administrateur WHERE username = ?";
-        $stmt = $db->prepare($getUserIdQuery);
-        $stmt->execute([$username]);
-        $userId = $stmt->fetchColumn();
+        $userId = $adminData["id"];
+
 
         session_start();
         $_SESSION["admin_name"] = $username;
