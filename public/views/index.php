@@ -7,6 +7,7 @@
     <title>Concours</title>
     <link rel="stylesheet" href="../../public/css/index.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../public/css/number-css.css">
 </head>
 
 <style>
@@ -174,9 +175,64 @@
     </div>
 
 
+    <!-- A propos -->
+
+    <div class="a-propos" data-aos="fade-left">
+        <h1 data-aos="fade-up">L'IAI-TOGO en quelques chiffres</h1>
+        <div class="card-container">
+
+            <div class="card">
+                <h1>+900</h1>
+                <p>diplômés</p>
+            </div>
+
+            <div class="vertical-line"></div>
+
+            <div class="card">
+                <h1>+3</h1>
+                <p>filieres en informatique</p>
+            </div>
+
+            <div class="vertical-line"></div>
+
+            <div class="card">
+                <h1>+89</h1>
+                <p>Enseignants</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="a-propos" data-aos="fade-right">
+        <div class="card-container">
+
+            <div class="card">
+                <h1>+400</h1>
+                <p>internationaux</p>
+            </div>
+
+            <div class="vertical-line"></div>
+
+            <div class="card">
+                <div class="stats">
+                    <p>+</p>
+                    <div id="example" data-max-number="10">0</div>
+                </div>
+                <p>Certificats internationaux</p>
+            </div>
+    
+            <div class="vertical-line"></div>
+
+            <div class="card">
+                <h1>+6</h1>
+                <p>Enseignants internationaux</p>
+            </div>
+        </div>
+    </div>
+
     <div data-aos="slide-up" id="contact-us">
         <?php include "../components/footer.php" ?>
     </div>
+    <script src="../js/number-rush.js"></script>
     <script src="../js/index.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

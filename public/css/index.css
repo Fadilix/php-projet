@@ -280,3 +280,71 @@ h1 {
 .informations{
     position: relative;
 } */
+
+
+/* For the card container */
+
+.a-propos {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 70px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.a-propos h1 {
+    margin-top: 40px;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.card-container {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 100px;
+    border: 1px solid teal;
+    width: 1000px;
+    padding: 40px;
+
+}
+
+.card p {
+    color: black;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-transform: uppercase;
+}
+
+.vertical-line {
+    width: 1px;
+    height: 150px;
+    background: teal;
+}
+
+
+.stats {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.stats p {
+    color: black;
+}
+
+#example {
+    color: black;
+}
