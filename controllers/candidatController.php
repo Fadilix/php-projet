@@ -169,12 +169,12 @@ function listCandidatsInscritParSexe($sexe)
 }
 
 // Liste des candidats inscrits par nation
-function listCandidatsParNation()
+function listCandidatsParNation($nationalite)
 {
     global $db;
-    $candidatParNation = "SELECT *, COUNT(*) as total FROM candidat GROUP BY nationalite";
+    $candidatParNation = "SELECT *, COUNT(*) as total FROM candidat WHERE nationalite = ?";
     $stmt = $db->prepare($candidatParNation);
-    $stmt->execute();
+    $stmt->execute([$nationalite]);
     return $stmt->fetchAll();
 }
 

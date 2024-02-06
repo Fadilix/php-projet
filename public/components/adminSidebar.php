@@ -149,7 +149,7 @@
 				<?php
 				if (isset($_POST["deco"])) {
 					$_SESSION["admin_id"] = "0";
-					header("Location: adminConnection.php");
+					header("Location: adminConnexion.php");
 				}
 				?>
 			</ul>

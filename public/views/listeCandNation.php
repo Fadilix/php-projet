@@ -20,8 +20,15 @@
         header("Location: adminConnexion.php");
     }
 
-    $candidats = listCandidatsParNation();
+    $candidats = listCandidatsParNation("Togo");
 
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_POST["valider"])) {
+            $country = $_POST["nationalite"];
+            $candidats = listCandidatsParNation($country);
+        }
+    }
     ?>
     <div class="sidebar">
         <?php include "../components/adminSidebar.php" ?>
@@ -44,6 +51,14 @@
                     <button type="submit" name="dateConc">Modifier</button>
                 </form>
             </div>
+
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <form action="" method="post">
+                    <h4>Choisir le pays</h4>
+                    <select name="nationalite" class="nationalite" id=""></select>
+                    <button type="submit" name="valider">Valider</button>
+                </form>
+            </div>
             <caption>Liste des candidats inscrits par nationalité</caption>
             <tr>
                 <th>Nom</th>
@@ -64,22 +79,30 @@
                 $username = getUsernameById($candidat["id_user"]);
 
             ?>
-                <tr>
-                    <td data-cell="Nom"><?php echo $candidat['nom']; ?></td>
-                    <td data-cell="Prenom"><?php echo $candidat['prenom']; ?></td>
-                    <td data-cell="Photo"><img src='../../uploads/<?php echo $username; ?>/photo/<?php echo $candidat['photo']; ?>' alt='Photo' width='50'></td>
-                    <td data-cell="Date de naissance"><?php echo $candidat['date_naiss']; ?></td>
-                    <td data-cell="Sexe"><?php echo $candidat['sexe']; ?></td>
-                    <td data-cell="Nationalité"><?php echo $candidat['nationalite']; ?></td>
-                    <td data-cell="Année d'obtention de BAC II"><?php echo $candidat['annee_bac2']; ?></td>
-                    <td data-cell="Serie"><?php echo $candidat['serie']; ?></td>
-                    <td data-cell="Copie de naissance"><a href="../../uploads/<?php echo $username; ?>/copie_naiss/<?php echo $candidat['copie_nais']; ?>">Voir</a></td>
-                    <td data-cell="Copie de nationalité"><a href='../../uploads/<?php echo $username; ?>/copie_nation/<?php echo $candidat['copie_nation']; ?>'>Voir</a></td>
-                    <td data-cell="Copie de l'attestation de BAC II"><a href='../../uploads/<?php echo $username; ?>/attest_bac/<?php echo $candidat['copie_attes_bac2']; ?>'>Voir</a></td>
-                </tr>
+
+                <?php if ($candidat["total"] == 0) { ?>
+                    <p>Les données ne sont pas disponibles pour ce pays</p>
+                <?php  } else { ?>
+                    <tr>
+                        <td data-cell="Nom"><?php echo $candidat['nom']; ?></td>
+                        <td data-cell="Prenom"><?php echo $candidat['prenom']; ?></td>
+                        <td data-cell="Photo"><img src='../../uploads/<?php echo $username; ?>/photo/<?php echo $candidat['photo']; ?>' alt='Photo' width='50'></td>
+                        <td data-cell="Date de naissance"><?php echo $candidat['date_naiss']; ?></td>
+                        <td data-cell="Sexe"><?php echo $candidat['sexe']; ?></td>
+                        <td data-cell="Nationalité"><?php echo $candidat['nationalite']; ?></td>
+                        <td data-cell="Année d'obtention de BAC II"><?php echo $candidat['annee_bac2']; ?></td>
+                        <td data-cell="Serie"><?php echo $candidat['serie']; ?></td>
+                        <td data-cell="Copie de naissance"><a href="../../uploads/<?php echo $username; ?>/copie_naiss/<?php echo $candidat['copie_nais']; ?>">Voir</a></td>
+                        <td data-cell="Copie de nationalité"><a href='../../uploads/<?php echo $username; ?>/copie_nation/<?php echo $candidat['copie_nation']; ?>'>Voir</a></td>
+                        <td data-cell="Copie de l'attestation de BAC II"><a href='../../uploads/<?php echo $username; ?>/attest_bac/<?php echo $candidat['copie_attes_bac2']; ?>'>Voir</a></td>
+                    </tr>
+                <?php } ?>
             <?php } ?>
+
         </table>
     </div>
+
+    <script src="../js/fetchCountriesApi.js"></script>
 </body>
 
 </html>
