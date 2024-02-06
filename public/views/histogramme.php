@@ -50,7 +50,7 @@ function getRegistrationStatisticsByNationality()
             data.addRows(jsonData);
 
             var options = {
-                title: 'Statistiques des étudiants inscrits par nationalite',
+                title: 'Statistiques des étudiants inscrits par nationalité',
                 legend: {
                     position: 'none'
                 },
@@ -112,6 +112,12 @@ function getRegistrationStatisticsByNationality()
                 flex-basis: calc(100% - 300px);
             }
         }
+
+        .informations {
+            margin-right: 100px;
+            font-weight: bold;
+            /* background-color: red; */
+        }
     </style>
 </head>
 
@@ -124,10 +130,10 @@ function getRegistrationStatisticsByNationality()
     <div id="chart_container">
         <div id="chart_div"></div>
     </div>
-    <!-- 
+
     <div class="informations">
-        <p>Nombre total de candidats inscrits : <?php echo nombreTotalDinscrit()["total"]; ?></p>
-    </div> -->
+        <p>Total inscrits : <?php echo nombreTotalDinscrit()["total"]; ?></p>
+    </div>
 </body>
 
 </html>
