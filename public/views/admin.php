@@ -78,9 +78,9 @@
                         <td data-cell="Nationalite"><?php echo $row['nationalite']; ?></td>
                         <td data-cell="Annee d'obtention de BAC II"><?php echo $row['annee_bac2']; ?></td>
                         <td data-cell="Serie"><?php echo $row['serie']; ?></td>
-                        <td data-cell="Copie de naissance"><a href="../../uploads/<?php echo $username; ?>/copie_naiss/<?php echo $row['copie_nais']; ?>" download>Télécharger</a></td>
-                        <td data-cell="Copie de nationalite"><a href='../../uploads/<?php echo $username; ?>/copie_nation/<?php echo $row['copie_nation']; ?>' download>Télécharger</a></td>
-                        <td data-cell="Copie de l'attestion de BAC II"><a href='../../uploads/<?php echo $username; ?>/attest_bac/<?php echo $row['copie_attes_bac2']; ?>' download>Télécharger</a></td>
+                        <td data-cell="Copie de naissance"><a href="../../uploads/<?php echo $username; ?>/copie_naiss/<?php echo $row['copie_nais']; ?>">Voir</a></td>
+                        <td data-cell="Copie de nationalite"><a href='../../uploads/<?php echo $username; ?>/copie_nation/<?php echo $row['copie_nation']; ?>'>Voir</a></td>
+                        <td data-cell="Copie de l'attestion de BAC II"><a href='../../uploads/<?php echo $username; ?>/attest_bac/<?php echo $row['copie_attes_bac2']; ?>'>Voir</a></td>
                         <td data-cell="id_user"><?php echo $row["id_user"]; ?></td>
                     </tr>
                 <?php } ?>
