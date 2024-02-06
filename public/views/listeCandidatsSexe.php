@@ -19,7 +19,17 @@
     if ((string) $adminId === "0") {
         header("Location: adminConnexion.php");
     }
-    $candidats = listCandidatsInscritParSexe();
+
+
+    $candidats = listCandidatsInscritParSexe("F");
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_POST["f"])) {
+            $candidats = listCandidatsInscritParSexe("F");
+        } else if (isset($_POST["m"])) {
+            $candidats = listCandidatsInscritParSexe("M");
+        }
+    }
 
     ?>
     <div class="sidebar">
@@ -43,6 +53,12 @@
                     <button type="submit" name="dateConc">Modifier</button>
                 </form>
             </div>
+            <caption>
+                <form action="" method="post">
+                    <button type="submit" name="m">M</button>
+                    <button type="submit" name="f">F</button>
+                </form>
+            </caption>
             <caption>Liste des candidats inscrits par sexe</caption>
             <tr>
                 <th>Nom</th>

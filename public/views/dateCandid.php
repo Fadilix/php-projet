@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/dateCandid.css">
 </head>
 
 <body>
@@ -23,6 +24,8 @@
     }
     ?>
 
+    <?php include "../components/adminSidebar.php" ?>
+    <h3>Modifier la date de candidature</h3>
     <form action="" method="POST">
         <input type="date" name="new_date" placeholder="date de candidature" value="<?php echo $dateLimDepot["date_lim_dep"]; ?>">
         <button type="submit">Modifier</button>

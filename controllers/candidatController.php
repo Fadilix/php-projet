@@ -159,12 +159,12 @@ function updateCandidat(
 
 
 // Liste des candidats inscrits pas sexe
-function listCandidatsInscritParSexe()
+function listCandidatsInscritParSexe($sexe)
 {
     global $db;
-    $candidatesPerSexQuery = "SELECT * FROM candidat GROUP BY sexe";
+    $candidatesPerSexQuery = "SELECT * FROM candidat WHERE sexe = ?";
     $stmt = $db->prepare($candidatesPerSexQuery);
-    $stmt->execute();
+    $stmt->execute([$sexe]);
     return $stmt->fetchAll();
 }
 
