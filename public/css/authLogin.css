@@ -18,6 +18,10 @@ a, button{
     color: black;
 }
 
+/* a:hover{
+    color: white;
+} */
+
 @keyframes TopToBottomAnimation {
     from {
         transform: translateY(-100px);
