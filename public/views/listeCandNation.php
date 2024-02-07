@@ -77,7 +77,6 @@
             <?php
             foreach ($candidats as $candidat) {
                 $username = getUsernameById($candidat["id_user"]);
-
             ?>
 
                 <?php if ($candidat["total"] == 0) { ?>
