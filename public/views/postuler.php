@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $attestBac = $_FILES["attest_bac"]["name"];
 
     // validation pour le formulaire
-    if (empty($nom) || empty($prenom) || empty($dateNais) || empty($sexe) || empty($nationalite) || empty($anneeBac) || empty($serieBac) || empty($photo) || empty($copieNais) || empty($copieNation) || empty($attestBac)) {
+    if (empty($nom) || empty($prenom) || empty($dateNais) || empty($sexe) || empty($nationalite) || empty($anneeBac) || empty($serieBac) || empty($photo)) {
         echo "Tous les champs sont réquis";
         exit;
     }

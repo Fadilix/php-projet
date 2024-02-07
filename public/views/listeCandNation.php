@@ -79,7 +79,7 @@
                 $username = getUsernameById($candidat["id_user"]);
             ?>
 
-                <?php if ($candidat["total"] == 0) { ?>
+                <?php if (empty($candidat["nom"])) { ?>
                     <p>Les données ne sont pas disponibles pour ce pays</p>
                 <?php  } else { ?>
                     <tr>

@@ -172,7 +172,7 @@ function listCandidatsInscritParSexe($sexe)
 function listCandidatsParNation($nationalite)
 {
     global $db;
-    $candidatParNation = "SELECT *, COUNT(*) as total FROM candidat WHERE nationalite = ?";
+    $candidatParNation = "SELECT * FROM candidat WHERE nationalite = ?";
     $stmt = $db->prepare($candidatParNation);
     $stmt->execute([$nationalite]);
     return $stmt->fetchAll();
@@ -193,7 +193,7 @@ function listCandidatsInscritDouble()
 function listeCandOmisDupload()
 {
     global $db;
-    $omisDuploadQuery = "SELECT * FROM candidat WHERE copie_nais IS NULL OR copie_nation IS NULL OR copie_attes_bac2 IS NULL";
+    $omisDuploadQuery = "SELECT * FROM candidat WHERE copie_nais = '' OR copie_nation = '' OR copie_attes_bac2 = ''";
     $stmt = $db->prepare($omisDuploadQuery);
     $stmt->execute();
     return $stmt->fetchAll();

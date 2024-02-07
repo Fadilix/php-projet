@@ -142,7 +142,7 @@ h1 {
     transition: .3s;
 
     &:hover {
-        transform: translateY(-5px)
+        transform: translateY(-5px);
     }
 }
 
