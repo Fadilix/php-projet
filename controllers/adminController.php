@@ -51,7 +51,6 @@ function logAdmin($username, $password)
         $userId = $adminData["id"];
 
 
-        
         session_start();
         $_SESSION["admin_name"] = $username;
         $_SESSION["admin_id"] = $userId;
