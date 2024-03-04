@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concours</title>
+    <link rel="stylesheet" href="./index.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../public/css/number-css.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+
+<style>
+    .contest-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+
+    .title {
+        width: 800px;
+        text-align: center;
+    }
+    
+</style>
+
+<body>
+
+    <!-- <script>
+        alert("This is only a static preview, clone the repository, to access the full functionalities")
+    </script> -->
+
+    <!-- navbar -->
+
+
+    <button class="github-button">
+        <a href="https://github.com/Fadilix/php-school-project" target="_blank">    
+            <img src="public/images/github_icon.png" alt="">
+        </a>
+    </button>
+
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/navbar.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script type="text/javascript">
+            $(window).on('scroll', function() {
+                if ($(window).scrollTop()) {
+                    $('nav').addClass('black');
+                } else {
+                    $('nav').removeClass('black');
+                }
+            })
+            /*menu button onclick function*/
+            $(document).ready(function() {
+                $('.menu h4').click(function() {
+                    $("nav ul").toggleClass("active")
+                })
+            })
+        </script>
+    </head>
+    
+    <body>
+        <div class="responsive-bar">
+            <div class="logo">
+                <img src="public/images/custom_iai_logo.png" alt="logo" />
+            </div>
+            <div class="menu">
+                <h4>Menu</h4>
+            </div>
+        </div>
+        <nav>
+            <div class="logo">
+                <img src="public/images/custom_iai_logo.png" alt="logo" />
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#formations">Nos formations</a></li>
+                <li><a href="#choice">Pourquoi nous choisir</a></li>
+                <li><a href="#contact-us">Contact Us</a></li>
+            </ul>
+        </nav>
+    </body>
+    <div class="informations-container" id="home">
+        <div class="informations">
+
+            <script>
+                var candidDate = new Date("2024-04-07T00:00:00");
+
+                var countdownInterval = setInterval(updateCountdown, 1000);
+
+                function updateCountdown() {
+                    var now = new Date();
+                    var timeDifference = candidDate - now;
+
+                    var days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+                    document.getElementById("countdown").innerHTML = "Fin de dépôt de candidature dans : " +
+                        "<span>" +
+                        days + " jours " +
+                        hours + " heures " +
+                        minutes + " minutes " +
+                        seconds + " secondes" +
+                        "</span>";
+
+                    if (timeDifference <= 0) {
+                        clearInterval(countdownInterval);
+                        document.getElementById("countdown").innerHTML = "Le délai de dépôt de candidature est expiré.";
+                    }
+                }
+            </script>
+            <div class='contest-info'>
+                <h4 id="countdown">Fin de dépôt de candidature dans : Loading...</h4>
+
+                <h1 class="title">Bienvenue sur notre plateforme d'inscription au concours d'entrée d'IAI-TOGO</h1>
+                <p class="title">Transformez votre passion en expertise numérique avec l'École Informatique IAI Togo – Où l'innovation devient une réalité, et vos rêves informatiques prennent vie!</p>
+            </div>
+
+            <div class="links">
+                <a href="#" class="inscription-button button-click">Créer un compte</a>
+                <a href="#" class="connection-button button-click">Se connecter</a>
+            </div>
+        </div>
+    </div>
+    <div class="formations" id="formations">
+        <h1 data-aos="fade-up" class="nos-formations">Nos formations</h1>
+        <div class="parcourss">
+
+            <div class="parcours glsi" data-aos="fade-right">
+                <h1 class="h1">GLSI</h1>
+                <p>
+                    Le parcours GLSI à l'IAI Togo se concentre sur le développement de compétences avancées en génie logiciel et en conception de systèmes d'information. Les étudiants apprendront à concevoir, développer et maintenir des logiciels robustes, tout en acquérant une compréhension approfondie des systèmes d'information. Des cours pratiques et des projets concrets permettront aux étudiants de maîtriser les technologies modernes et les méthodologies de développement.
+                </p>
+            </div>
+
+            <div class="parcours asr" data-aos="fade-in">
+                <h1 class="h1">ASR</h1>
+                <p>
+                    Le parcours ASR prépare les étudiants à exceller dans le domaine de l'administration des systèmes et des réseaux informatiques. Les cours couvrent une variété de sujets, y compris la gestion des serveurs, la sécurité réseau, la configuration des systèmes, et la résolution des problèmes liés aux infrastructures informatiques. Les étudiants développeront des compétences pratiques essentielles pour maintenir des réseaux informatiques performants et sécurisés.
+                </p>
+            </div>
+
+            <div class="parcours mtwi" data-aos="fade-left">
+                <h1 class="h1">MTWI</h1>
+                <p>
+                    Le parcours MTWI à l'IAI Togo met l'accent sur la création et la gestion de contenus multimédias. Les étudiants apprendront les aspects techniques de la production multimédia, y compris la conception graphique, la production vidéo, l'animation et le développement web interactif. Ce parcours offre une combinaison unique de compétences techniques et créatives pour préparer les étudiants à exceller dans l'industrie dynamique du multimédia.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="choice-of-iai" id="choice">
+        <h1 data-aos="fade-up">Pourquoi nous choisir ?</h1>
+        <div class="left-and-right">
+
+            <div class="left" data-aos="fade-right">
+                <img src="public/images/cs_class.jpg" alt="">
+            </div>
+            <div class="reasons">
+                <div class="reason ex-acad" data-aos="fade-in">
+                    <div class="tick">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                        </svg>
+
+                        <h2> Excellence académique</h2>
+                    </div>
+                    <p>Son équipe pédagogique est composée des enseignants expérimentés universitaires et des professionnels de l’informatique, d’un staff d’encadrement rigoureux et professionnel. Son programme de formation est régulièrement visité et mis à jour .</p>
+                </div>
+
+
+                <div class="reason stages" data-aos="fade-in">
+                    <div class="tick">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                        </svg>
+
+                        <h2>Projets et Stages Académiques</h2>
+                    </div>
+                    <p>Après le volet des apprentissages dans des salles pour des cours théoriques & pratiques, les étudiants sont invités à l’insertion professionnelle dans des entreprises, des cabinets informatiques et autres structures tant publiques que privés pour y effectuer des stages au semestres 4 et 6.</p>
+                </div>
+
+                <div class="reason equip" data-aos="fade-in">
+                    <div class="tick">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                        </svg>
+
+                        <h2>Infrastructures et équipements de pointe
+                    </div>
+                    </h2>
+                    <p>Son équipe pédagogique est composée des enseignants expérimentés universitaires et des professionnels de l’informatique, d’un staff d’encadrement rigoureux et professionnel. Son programme de formation est régulièrement visité et mis à jour .</p>
+                </div>
+
+                <div class="reason diplomes" data-aos="fade-in">
+                    <div class="tick">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                        </svg>
+
+                        <h2>Suivi des diplômés</h2>
+                    </div>
+                    <p>Le réseau d’allumis de l’IAI-TOGO se compose essentiellement des diplômés éparpillés sur la planète (Inde, Chine, France, Canada, Etats-Unis, Bénin, Côte d’Ivoire, Burkina-Faso, Îles de Madagascar, …).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="graduation" data-aos="fade-right">
+        <h1 data-aos="fade-right" data-aos-easing="ease-out-cubic" data-aos-duration="4000">L'excellence à IAI-TOGO</h1>
+    </div>
+
+
+    <!-- A propos -->
+
+    <div class="a-propos" data-aos="fade-left">
+        <h1 data-aos="fade-up">L'IAI-TOGO en quelques chiffres</h1>
+        <div class="card-container">
+
+            <div class="card">
+                <h1>+900</h1>
+                <p>diplômés</p>
+            </div>
+
+            <div class="vertical-line"></div>
+
+            <div class="card">
+                <h1>+3</h1>
+                <p>filieres en informatique</p>
+            </div>
+
+            <div class="vertical-line"></div>
+
+            <div class="card">
+                <h1>+89</h1>
+                <p>Enseignants</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="a-propos" data-aos="fade-right">
+        <div class="card-container">
+
+            <div class="card">
+                <h1>+400</h1>
+                <p>internationaux</p>
+            </div>
+
+            <div class="vertical-line"></div>
+
+            <div class="card">
+                <div class="stats">
+                    <p>+</p>
+                    <div id="example" data-max-number="10">0</div>
+                </div>
+                <p>Certificats internationaux</p>
+            </div>
+    
+            <div class="vertical-line"></div>
+
+            <div class="card">
+                <h1>+6</h1>
+                <p>Enseignants internationaux</p>
+            </div>
+        </div>
+    </div>
+
+    <div data-aos="slide-up" id="contact-us">
+        <div class="pg-footer" style="margin-top: 100px;">
+            <footer class="footer">
+                <svg class="footer-wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
+                    <path class="footer-wave-path" d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"></path>
+                </svg>
+                <div class="footer-content">
+                    <div class="footer-content-column">
+                        <div class="footer-logo">
+                            <a class="footer-logo-link" href="#">
+                                <span class="hidden-link-text">LOGO</span>
+                                <h1><img style="width: 90px;" src="public/images/custom_iai_logo.png" alt=""></h1>
+                            </a>
+                        </div>
+                        <div class="footer-menu">
+                            <h2 class="footer-menu-name">IAI-TOGO</h2>
+                            <ul id="menu-get-started" class="footer-menu-list">
+                                <li class="menu-item menu-item-type-post_type menu-item-object-product">
+                                    <p>
+                                        L'Institut Africain d'Informatique (IAI) et son réseau sont des centres de référence en matière de formation en Afrique.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-content-column">
+                        <div class="footer-menu">
+                            <h2 class="footer-menu-name">Contacts</h2>
+                            <ul id="menu-company" class="footer-menu-list">
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                                    <a href="#">
+                                        <p>iaitogo@iai-togo.tg</p>
+                                    </a>
+                                </li>
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                    (00228) 22 20 47 00
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer-menu">
+                            <h2 class="footer-menu-name">A propos</h2>
+                            <ul id="menu-legal" class="footer-menu-list">
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-170434">
+                                    <a href="#">Newsletter</a>
+                                </li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                                    <a href="#">Contact & Support</a>
+                                </li>
+    
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                                    <a href="#">Evenements</a>
+                                </li>
+    
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                                    <a href="#">Paramètres de confidentialité</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-content-column">
+                        <div class="footer-menu">
+                            <h2 class="footer-menu-name"> Quick Links</h2>
+                            <ul id="menu-quick-links" class="footer-menu-list">
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                                    <a target="_blank" rel="noopener noreferrer" href="#">Inscription</a>
+                                </li>
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                                    <a target="_blank" rel="noopener noreferrer" href="#">Formation</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-content-column">
+                        <div class="footer-call-to-action">
+                            <h2 class="footer-call-to-action-title"> Let's Chat</h2>
+                            <p class="footer-call-to-action-description"> Vous avez une question ?</p>
+                            <a class="footer-call-to-action-button button" href="#" target="_self">Contactez nous</a>
+                        </div>
+                        <div class="footer-call-to-action">
+                            <h2 class="footer-call-to-action-title">Appelez-nous</h2>
+                            <p class="footer-call-to-action-link-wrapper">
+                                <a class="footer-call-to-action-link" href="#" target="_self">(00228) 22 20 47 00</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="footer-social-links">
+                        <svg class="footer-social-amoeba-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236 54">
+                            <path class="footer-social-amoeba-path" d="M223.06,43.32c-.77-7.2,1.87-28.47-20-32.53C187.78,8,180.41,18,178.32,20.7s-5.63,10.1-4.07,16.7-.13,15.23-4.06,15.91-8.75-2.9-6.89-7S167.41,36,167.15,33a18.93,18.93,0,0,0-2.64-8.53c-3.44-5.5-8-11.19-19.12-11.19a21.64,21.64,0,0,0-18.31,9.18c-2.08,2.7-5.66,9.6-4.07,16.69s.64,14.32-6.11,13.9S108.35,46.5,112,36.54s-1.89-21.24-4-23.94S96.34,0,85.23,0,57.46,8.84,56.49,24.56s6.92,20.79,7,24.59c.07,2.75-6.43,4.16-12.92,2.38s-4-10.75-3.46-12.38c1.85-6.6-2-14-4.08-16.69a21.62,21.62,0,0,0-18.3-9.18C13.62,13.28,9.06,19,5.62,24.47A18.81,18.81,0,0,0,3,33a21.85,21.85,0,0,0,1.58,9.08,16.58,16.58,0,0,1,1.06,5A6.75,6.75,0,0,1,0,54H236C235.47,54,223.83,50.52,223.06,43.32Z"></path>
+                        </svg>
+                        <a class="footer-social-link linkedin" href="#" target="_blank">
+                            <span class="hidden-link-text">Linkedin</span>
+                            <svg style="width: 20px;" class="footer-social-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                <path class="footer-social-icon-path" d="M9,25H4V10h5V25z M6.501,8C5.118,8,4,6.879,4,5.499S5.12,3,6.501,3C7.879,3,9,4.121,9,5.499C9,6.879,7.879,8,6.501,8z M27,25h-4.807v-7.3c0-1.741-0.033-3.98-2.499-3.98c-2.503,0-2.888,1.896-2.888,3.854V25H12V9.989h4.614v2.051h0.065 c0.642-1.18,2.211-2.424,4.551-2.424c4.87,0,5.77,3.109,5.77,7.151C27,16.767,27,25,27,25z"></path>
+                            </svg>
+                        </a>
+                        <a class="footer-social-link twitter" href="#" target="_blank">
+                            <span class="hidden-link-text">Twitter</span>
+                            <svg style="width: 20px;" class="footer-social-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26">
+                                <path class="footer-social-icon-path" d="M 25.855469 5.574219 C 24.914063 5.992188 23.902344 6.273438 22.839844 6.402344 C 23.921875 5.75 24.757813 4.722656 25.148438 3.496094 C 24.132813 4.097656 23.007813 4.535156 21.8125 4.769531 C 20.855469 3.75 19.492188 3.113281 17.980469 3.113281 C 15.082031 3.113281 12.730469 5.464844 12.730469 8.363281 C 12.730469 8.773438 12.777344 9.175781 12.867188 9.558594 C 8.503906 9.339844 4.636719 7.246094 2.046875 4.070313 C 1.59375 4.847656 1.335938 5.75 1.335938 6.714844 C 1.335938 8.535156 2.261719 10.140625 3.671875 11.082031 C 2.808594 11.054688 2 10.820313 1.292969 10.425781 C 1.292969 10.449219 1.292969 10.46875 1.292969 10.492188 C 1.292969 13.035156 3.101563 15.15625 5.503906 15.640625 C 5.0625 15.761719 4.601563 15.824219 4.121094 15.824219 C 3.78125 15.824219 3.453125 15.792969 3.132813 15.730469 C 3.800781 17.8125 5.738281 19.335938 8.035156 19.375 C 6.242188 20.785156 3.976563 21.621094 1.515625 21.621094 C 1.089844 21.621094 0.675781 21.597656 0.265625 21.550781 C 2.585938 23.039063 5.347656 23.90625 8.3125 23.90625 C 17.96875 23.90625 23.25 15.90625 23.25 8.972656 C 23.25 8.742188 23.246094 8.515625 23.234375 8.289063 C 24.261719 7.554688 25.152344 6.628906 25.855469 5.574219 "></path>
+                            </svg>
+                        </a>
+                        <a class="footer-social-link youtube" href="#" target="_blank">
+                            <span class="hidden-link-text">Youtube</span>
+                            <svg style="width: 20px;" class="footer-social-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                <path class="footer-social-icon-path" d="M 15 4 C 10.814 4 5.3808594 5.0488281 5.3808594 5.0488281 L 5.3671875 5.0644531 C 3.4606632 5.3693645 2 7.0076245 2 9 L 2 15 L 2 15.001953 L 2 21 L 2 21.001953 A 4 4 0 0 0 5.3769531 24.945312 L 5.3808594 24.951172 C 5.3808594 24.951172 10.814 26.001953 15 26.001953 C 19.186 26.001953 24.619141 24.951172 24.619141 24.951172 L 24.621094 24.949219 A 4 4 0 0 0 28 21.001953 L 28 21 L 28 15.001953 L 28 15 L 28 9 A 4 4 0 0 0 24.623047 5.0546875 L 24.619141 5.0488281 C 24.619141 5.0488281 19.186 4 15 4 z M 12 10.398438 L 20 15 L 12 19.601562 L 12 10.398438 z"></path>
+                            </svg>
+                        </a>
+                        <a class="footer-social-link github" href="#" target="_blank">
+                            <span class="hidden-link-text">Github</span>
+                            <svg style="width: 30px;" class="footer-social-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                <path class="footer-social-icon-path" d="M 16 4 C 9.371094 4 4 9.371094 4 16 C 4 21.300781 7.4375 25.800781 12.207031 27.386719 C 12.808594 27.496094 13.027344 27.128906 13.027344 26.808594 C 13.027344 26.523438 13.015625 25.769531 13.011719 24.769531 C 9.671875 25.492188 8.96875 23.160156 8.96875 23.160156 C 8.421875 21.773438 7.636719 21.402344 7.636719 21.402344 C 6.546875 20.660156 7.71875 20.675781 7.71875 20.675781 C 8.921875 20.761719 9.554688 21.910156 9.554688 21.910156 C 10.625 23.746094 12.363281 23.214844 13.046875 22.910156 C 13.15625 22.132813 13.46875 21.605469 13.808594 21.304688 C 11.144531 21.003906 8.34375 19.972656 8.34375 15.375 C 8.34375 14.0625 8.8125 12.992188 9.578125 12.152344 C 9.457031 11.851563 9.042969 10.628906 9.695313 8.976563 C 9.695313 8.976563 10.703125 8.65625 12.996094 10.207031 C 13.953125 9.941406 14.980469 9.808594 16 9.804688 C 17.019531 9.808594 18.046875 9.941406 19.003906 10.207031 C 21.296875 8.65625 22.300781 8.976563 22.300781 8.976563 C 22.957031 10.628906 22.546875 11.851563 22.421875 12.152344 C 23.191406 12.992188 23.652344 14.0625 23.652344 15.375 C 23.652344 19.984375 20.847656 20.996094 18.175781 21.296875 C 18.605469 21.664063 18.988281 22.398438 18.988281 23.515625 C 18.988281 25.121094 18.976563 26.414063 18.976563 26.808594 C 18.976563 27.128906 19.191406 27.503906 19.800781 27.386719 C 24.566406 25.796875 28 21.300781 28 16 C 28 9.371094 22.628906 4 16 4 Z "></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <div class="footer-copyright-wrapper">
+                        <p class="footer-copyright-text">
+                            <a class="footer-copyright-link" href="#" target="_self"> ©2024. | Designed By: Fadilou, Kénza & Péniel | All rights reserved. </a>
+                        </p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="../js/number-rush.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
