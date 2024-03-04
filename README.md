@@ -1,5 +1,6 @@
 # IAI-TOGO Recruitment Platform
-
+## Preview
+Due to server hosting limitations, the current deployment is presented as a static HTML content, showcasing the frontend of the application and only showing the **home page**. For a preview, [click here](https://php-school-project-static-html.vercel.app/)
 ## Purpose
 The IAI-TOGO Recruitment Platform is a web application designed to automate the annual student recruitment process for the Institut Africain d’Informatique, représentation du Togo (IAI-TOGO). It aims to streamline the application process and provide administrators with statistical insights.
 
